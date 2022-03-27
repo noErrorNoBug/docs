@@ -140,26 +140,23 @@ module.exports = [
             tex: true,                      /* 开启 开启tex公式 */
         },
     ],
-
     /**
-     * 右侧显示标题列表
+     * 右边栏
      */
     [
         'vuepress-plugin-right-anchor',
         {
-            showDepth: 2,   /* 列表深度 2表示显示到h1，h2，h3 */
+            showDepth: 2,   /* 标题深度 */
             ignore: [
                 '/',
                 '/docs/'
-                /* 忽略的路径 */
+                /* 忽略路径 */
             ],
-            /* 菜单的展开配置 */
             expand: {
-                trigger: 'hover',               /* hover | click 悬停或者点击 */
-                clickModeDefaultOpen: true      /* 点击模式是否默认展开 */
+                trigger: 'hover',                   /* 展开菜单的触发方式,悬浮或者点击。 hover | click */
+                clickModeDefaultOpen: true          /* 点击模式下是否默认打开菜单 */
             },
-            customClass: '文章标题',        /* 自定义右侧菜单显示名 */
+            customClass: '章节目录',        /* 自定义的 right-anchor 类名 */
         }
     ]
-
 ]

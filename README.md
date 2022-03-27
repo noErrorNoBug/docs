@@ -37,9 +37,6 @@ yarn add -D vuepress-plugin-md-enhance@2.0.0-beta.27
 yarn add -D @vuepress/plugin-toc@2.0.0-beta.36
 yarn add -D @vuepress/plugin-nprogress@@2.0.0-beta.36
 yarn add -D vuepress-plugin-right-anchor@2.0.0-rc.3
-yarn add -D @vuepress/shared-utils@1.9.7
-yarn add -D lru-cache@7.7.1
-yarn add -D @vue/component-compiler-utils@3.3.0
 # 启动
 yarn docs:dev
 # 构建

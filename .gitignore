@@ -107,7 +107,5 @@ dist
 
 .temp
 .cache
-package.json
-yarn.lock
 
 secret.js

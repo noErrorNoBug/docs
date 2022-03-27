@@ -1,6 +1,18 @@
 const secret = require('./secret');
 module.exports = [
-
+    /**
+     * vssue 评论
+     */
+     [
+        '@vssue/vuepress-plugin-vssue', {
+            platform: 'github-v4',
+            owner: 'noErrorNoBug',
+            repo: 'docs',
+            clientId: secret.clientId,
+            clientSecret: secret.clientSecret,
+            autoCreateIssue: true, /* 自动创建评论 */
+        }
+    ],
     /**
      * 内置搜索插件
      */
@@ -30,17 +42,5 @@ module.exports = [
             selector: ':not(a) > img',  /* 除了<a>标签的所有 img标签图片都可以缩放 */
         }
     ],
-    /**
-     * vssue 评论
-     */
-    [
-        '@vssue/vuepress-plugin-vssue', {
-            platform: 'github-v4',
-            owner: 'noErrorNoBug',
-            repo: 'docs',
-            clientId: secret.clientId,
-            clientSecret: secret.clientSecret,
-            autoCreateIssue: true, /* 自动创建评论 */
-        }
-    ],
+    
 ]

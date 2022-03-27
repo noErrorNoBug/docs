@@ -1,0 +1,24 @@
+{
+  "name": "docs",
+  "version": "1.0.0",
+  "description": "后端技术笔记",
+  "main": "index.js",
+  "repository": "git@github.com:noErrorNoBug/docs.git",
+  "author": "sunqiang <749922109@qq.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "@vssue/api-github-v4": "1.4.7",
+    "@vssue/vuepress-plugin-vssue": "1.4.8",
+    "@vuepress/plugin-back-to-top": "2.0.0-beta.36",
+    "@vuepress/plugin-docsearch": "2.0.0-beta.36",
+    "@vuepress/plugin-last-updated": "1.9.7",
+    "@vuepress/plugin-medium-zoom": "2.0.0-beta.36",
+    "@vuepress/plugin-search": "2.0.0-beta.36",
+    "vuepress": "2.0.0-beta.36"
+  },
+  "scripts": {
+    "docs:dev": "vuepress dev docs",
+    "docs:build": "vuepress build docs",
+    "deploy": "bash deploy.sh"
+  }
+}

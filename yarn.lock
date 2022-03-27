@@ -1050,6 +1050,11 @@
     "@docsearch/css" "3.0.0-alpha.42"
     algoliasearch "^4.0.0"
 
+"@giscus/vue@^1.1.1":
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/@giscus/vue/-/vue-1.1.1.tgz#8ccc564767b2a1357b751b1c74f843542b2ef3b0"
+  integrity sha512-N//nUA4ykteOptTOA9oPJYTkcx365pPPPmTVZJSjzWHDSf5O6IcPXoKzTTiTL8oJHHuVHe9bMnvX3K/VrtgYxQ==
+
 "@jridgewell/resolve-uri@^3.0.3":
   version "3.0.5"
   resolved "https://registry.yarnpkg.com/@jridgewell/resolve-uri/-/resolve-uri-3.0.5.tgz#68eb521368db76d040a6315cdb24bf2483037b9c"
@@ -1784,6 +1789,11 @@
   integrity sha512-rN2qd22AUl7VdBxihagWyhUNHCyVk9IpvBTTfHoLH9G7rGE552X1f+zeCfehuno0zXif13jPw+icW/wn2a0rnQ==
   dependencies:
     vue-demi "*"
+
+"@waline/client@^1.6.0":
+  version "1.6.0"
+  resolved "https://registry.yarnpkg.com/@waline/client/-/client-1.6.0.tgz#4de2c6262c4cb8a8554308dd3844c42a17a8d7f9"
+  integrity sha512-nVjNh4l0GiO1D//aJj/6N6oCgFikhRqs4Juc9sbT2g9w+FxeEYosOc5PMlyDvp8JXGGla8uFuzhD8em5o7QZ3g==
 
 acorn@^8.5.0:
   version "8.7.0"
@@ -3824,6 +3834,11 @@ ts-debounce@^4.0.0:
   resolved "https://registry.yarnpkg.com/ts-debounce/-/ts-debounce-4.0.0.tgz#33440ef64fab53793c3d546a8ca6ae539ec15841"
   integrity sha512-+1iDGY6NmOGidq7i7xZGA4cm8DAa6fqdYcvO5Z6yBevH++Bdo9Qt/mN0TzHUgcCcKv1gmh9+W5dHqz8pMWbCbg==
 
+twikoo@^1.5.0:
+  version "1.5.0"
+  resolved "https://registry.yarnpkg.com/twikoo/-/twikoo-1.5.0.tgz#bba7abcb44302bd774b1708eef0f906a9a6cf4ad"
+  integrity sha512-qxMb4aUKrvfDjPE4J6dEFX3VPvAmD9fADTeydV3RLmDLQjHQOpzPVR8bfsQ6XjiYThxLYeQNyXLTL6qy54V6sQ==
+
 type-fest@^0.16.0:
   version "0.16.0"
   resolved "https://registry.yarnpkg.com/type-fest/-/type-fest-0.16.0.tgz#3240b891a78b0deae910dbeb86553e552a148860"
@@ -3968,6 +3983,21 @@ vue@^3.2.28, vue@^3.2.31:
     "@vue/runtime-dom" "3.2.31"
     "@vue/server-renderer" "3.2.31"
     "@vue/shared" "3.2.31"
+
+vuepress-plugin-comment2@^2.0.0-beta.27:
+  version "2.0.0-beta.27"
+  resolved "https://registry.yarnpkg.com/vuepress-plugin-comment2/-/vuepress-plugin-comment2-2.0.0-beta.27.tgz#045be71b7baf95711aca3d4cbedd9e1f9a800c72"
+  integrity sha512-Hjf5fwrmeLVw7HNrFSwCNMOLImEVKaicEQXrfgj8B1Fz6xW5uEU+IB7rUMhKIHlZEeDCIaW0iyfgyp/XgoGdzw==
+  dependencies:
+    "@giscus/vue" "^1.1.1"
+    "@mr-hope/vuepress-shared" "2.0.0-beta.27"
+    "@vuepress/client" "2.0.0-beta.35"
+    "@vuepress/utils" "2.0.0-beta.35"
+    "@waline/client" "^1.6.0"
+    twikoo "^1.5.0"
+    vue "^3.2.31"
+    vue-router "^4.0.14"
+    vuepress-plugin-sass-palette "2.0.0-beta.27"
 
 vuepress-plugin-copy-code2@^2.0.0-beta.27:
   version "2.0.0-beta.27"

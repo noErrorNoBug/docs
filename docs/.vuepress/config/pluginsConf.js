@@ -1,5 +1,5 @@
 module.exports = [
-    
+
     /**
      * 内置搜索插件
      */
@@ -67,7 +67,7 @@ module.exports = [
                 name: "\u540e\u7aef\u6280\u672f\u7b14\u8bb0",
                 short_name: "docs",
                 description: "\u4e2a\u4eba\u540e\u7aef\u6280\u672f\u7b14\u8bb0",
-            }, 
+            },
             favicon: '/favicon.ico',    /* favicon路径，文档说些绝对路径 */
             themeColor: '#F0FFF0',  /* 主题颜色，默认绿色 */
             maxSize: 40960, /* 缓存最大值，大文档多的话调大，这里给个40M，单位KB */
@@ -101,6 +101,26 @@ module.exports = [
                 image: '/icons/icon-384x384.png',  /* 磁贴图标 */
                 color: '#46bd87',  /* 磁贴颜色，缺省会自动回退到主题色。 */
             },
+        },
+    ],
+
+    /**
+     * 评论插件
+     */
+    [
+        'vuepress-plugin-comment2', {
+            type: "giscus", /* 服务提供者，使用 giscus */
+            comment: true, /* 是否默认启用评论 */
+            /**
+               giscus配置
+             */
+            repo: 'noErrorNoBug/giscus',        /* 存评论的仓库 */
+            repoId: 'R_kgDOHErULA',                 /* 仓库 ID */
+            category: 'Announcements',              /* Announcements */
+            categoryId: 'DIC_kwDOHErULM4COSqq',         /* 讨论分类 ID */
+            mapping: 'pathname',        /* 页面 ↔️ discussion 映射关系 */
+            reactionsEnabled: '1',       /* 是否启用主帖子上的反应 */
+            inputPosition: 'bottom',      /* 输入框的位置 */
         },
     ],
 

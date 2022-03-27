@@ -3762,6 +3762,11 @@ lodash.sortby@^4.7.0:
   resolved "https://registry.yarnpkg.com/lodash.sortby/-/lodash.sortby-4.7.0.tgz#edd14c824e2cc9c1e0b0a1b42bb5210516a42438"
   integrity sha1-7dFMgk4sycHgsKG0K7UhBRakJDg=
 
+lodash.throttle@^4.1.1:
+  version "4.1.1"
+  resolved "https://registry.yarnpkg.com/lodash.throttle/-/lodash.throttle-4.1.1.tgz#c23e91b710242ac70c37f1e1cda9274cc39bf2f4"
+  integrity sha1-wj6RtxAkKscMN/HhzaknTMOb8vQ=
+
 lodash@^4.17.15, lodash@^4.17.20:
   version "4.17.21"
   resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.21.tgz#679591c564c3bffaae8454cf0b3df370c3d6911c"
@@ -4737,6 +4742,13 @@ vuepress-plugin-pwa2@^2.0.0-beta.27:
     vue-router "^4.0.14"
     vuepress-plugin-sass-palette "2.0.0-beta.27"
     workbox-build "^6.5.1"
+
+vuepress-plugin-right-anchor@^0.5.5:
+  version "0.5.5"
+  resolved "https://registry.yarnpkg.com/vuepress-plugin-right-anchor/-/vuepress-plugin-right-anchor-0.5.5.tgz#f5b8b12e8c911e51a3203d6e40f5d3b0d3213d10"
+  integrity sha512-C/zKeCw8Zzcd62DSGyiOwG6gOE9//VY5lPFPXxh1N/kJ2ICoCLNKBTFk2L9oDRgpWVc1TXk4HDqT+wxqz7MgmQ==
+  dependencies:
+    lodash.throttle "^4.1.1"
 
 vuepress-plugin-sass-palette@2.0.0-beta.27:
   version "2.0.0-beta.27"

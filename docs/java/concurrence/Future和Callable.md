@@ -1,8 +1,6 @@
 ---
 title: Future和Callable
-TOC: true
 ---
-[[TOC]] 
 
 # Callable接口
 

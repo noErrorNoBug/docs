@@ -9,7 +9,7 @@ actions:
 #   type: primary
 - text: 热爱生活,科学编码
   link: /guide.md
-  type: secondary
+  type: primary
 features: # 特性介绍标题以及说明
 - title: 知识点梳理 
   details: 梳理记录后端常用技术点，形成体系，构建完整知识网络。

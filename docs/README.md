@@ -8,7 +8,7 @@ actions:
     # link: /zh/guide/getting-started.html
     # type: primary
 - text: 热爱生活,科学编码
-    link: /guide
+    link: /guide.md
     type: secondary
 features: # 特性介绍标题以及说明
 - title: 知识点梳理 

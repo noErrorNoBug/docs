@@ -22,5 +22,8 @@
     "docs:dev": "vuepress dev docs",
     "docs:build": "vuepress build docs",
     "deploy": "bash deploy.sh"
+  },
+  "dependencies": {
+    "@renovamen/vuepress-plugin-baidu-tongji": "^2.0.0-alpha.17"
   }
 }

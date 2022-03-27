@@ -43,6 +43,7 @@ module.exports = [
             selector: ':not(a) > img',  /* 除了<a>标签的所有 img标签图片都可以缩放 */
         }
     ],
+
     /**
      * 代码一键复制插件
      */
@@ -50,9 +51,18 @@ module.exports = [
         "vuepress-plugin-copy-code2",
         {
             showInMobile: true, /* 在移动端展示 */
-            pure: true, /* 使用样式纯净的小而简单的复制按钮 */
-            
+            pure: false, /* 使用样式纯净的小而简单的复制按钮 */
+
         },
     ],
+
+    /**
+     * 百度统计功能
+     */
+    [
+        '@renovamen/vuepress-plugin-baidu-tongji', {
+            'ba': '站点统计'
+        }
+    ]
 
 ]

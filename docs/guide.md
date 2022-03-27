@@ -1,5 +1,3 @@
 ---
-title: 这是导航
-comment: true
+title: 关于此网站
 ---
-给个评论啊我草

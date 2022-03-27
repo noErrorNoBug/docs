@@ -141,4 +141,9 @@ module.exports = [
         },
     ],
 
+    /**
+     * 开启Toc目录
+     */
+    [   '@vuepress/plugin-toc', true    ],
+
 ]

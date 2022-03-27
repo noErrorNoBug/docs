@@ -34,6 +34,8 @@ yarn add @renovamen/vuepress-plugin-baidu-tongji@2.0.0-alpha.17
 yarn add -D vuepress-plugin-pwa2@2.0.0-beta.27
 yarn add -D vuepress-plugin-comment2@2.0.0-beta.27
 yarn add -D vuepress-plugin-md-enhance@2.0.0-beta.27
+yarn add -D @vuepress/plugin-toc@2.0.0-beta.36
+yarn add -D @vuepress/plugin-nprogress@@2.0.0-beta.36
 
 # 启动
 yarn docs:dev

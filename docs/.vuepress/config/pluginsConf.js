@@ -1,17 +1,5 @@
 module.exports = [
-    /**
-     * vssue 评论
-     */
-    //  [
-    //     '@vssue/vuepress-plugin-vssue', {
-    //         platform: 'github-v4',
-    //         owner: 'noErrorNoBug',
-    //         repo: 'docs',
-    //         clientId: secret.clientId,
-    //         clientSecret: secret.clientSecret,
-    //         autoCreateIssue: true, /* 自动创建评论 */
-    //     }
-    // ],
+    
     /**
      * 内置搜索插件
      */
@@ -95,7 +83,7 @@ module.exports = [
                 force：立即注销当前 Service Worker 然后刷新以获取新内容。
                 hit、force比较影响阅读体验
              */
-            update: available,
+            update: 'available',
 
             /*
                 apple 精细化配置
@@ -111,7 +99,7 @@ module.exports = [
              */
             msTile: {
                 image: '/icons/icon-384x384.png',  /* 磁贴图标 */
-                color: themeColor,  /* 磁贴颜色，缺省会自动回退到主题色。 */
+                color: '#46bd87',  /* 磁贴颜色，缺省会自动回退到主题色。 */
             },
         },
     ],

@@ -1,3 +1,4 @@
+const secret = require('./secret');
 module.exports = [
 
     /**
@@ -37,8 +38,8 @@ module.exports = [
             platform: 'gitee',
             owner: 'noErrorNoBug',
             repo: 'docs',
-            clientId: '987f917aeee2cdea01d2084dd5435a0feffd48b1c2a01692eb20b233169f5d67',
-            clientSecret: 'cc0120a513d4a6069fb395677920476a3f362063dd391ab319fc4aa55a321020',
+            clientId: secret.clientId,
+            clientSecret: secret.clientSecret,
             autoCreateIssue: true, /* 自动创建评论 */
         }
     ],

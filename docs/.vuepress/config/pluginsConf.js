@@ -1,4 +1,3 @@
-const manifest = require('./manifest'); /* manifest信息 */
 module.exports = [
     /**
      * vssue 评论

@@ -16,7 +16,7 @@ yarn add -D  @vuepress/plugin-back-to-top@2.0.0-beta.36
 yarn add -D  @vuepress/plugin-docsearch@2.0.0-beta.36
 yarn add -D  @vuepress/plugin-medium-zoom@2.0.0-beta.36
 yarn add -D  @vssue/vuepress-plugin-vssue@1.4.8
-yarn add -D  @vssue/api-gitee-v5@1.4.7
+yarn add -D  @vssue/api-github-v4@1.4.7
 
 // 在package.json加入下面脚本
 "scripts": {

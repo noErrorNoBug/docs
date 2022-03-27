@@ -26,7 +26,7 @@ module.exports = {
         notFound: ["页面不见啦！", "地址不正确！"], /* 404提示 */
         repo: 'https://github.com/noErrorNoBug',   /* 导航栏设置仓库地址 */
         repoLabel: "GitHub",  /* 导航栏设置仓库名称 */
-        docsRepo: 'https://gitee.com/noErrorNoBug/docs', /* 文档地址 */
+        docsRepo: 'https://github.com/noErrorNoBug/docs', /* 文档地址 */
         docsDir: 'docs',    /* 文档目录 */
         docsBranch: 'master',   /* 文档分支 */
         editLinks: true,    /* 是否开启编辑此页 */

@@ -35,7 +35,7 @@ module.exports = [
      */
     [
         '@vssue/vuepress-plugin-vssue', {
-            platform: 'gitee',
+            platform: 'github-v4',
             owner: 'noErrorNoBug',
             repo: 'docs',
             clientId: secret.clientId,

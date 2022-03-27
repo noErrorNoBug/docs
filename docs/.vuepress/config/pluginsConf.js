@@ -42,15 +42,6 @@ module.exports = [
     ],
 
     /**
-     * 百度统计功能
-     */
-    [
-        '@renovamen/vuepress-plugin-baidu-tongji', {
-            'ba': '站点统计'
-        }
-    ],
-
-    /**
      * 渐进式pwa插件
      */
     [

@@ -149,15 +149,14 @@ module.exports = [
             showDepth: 2,   /* 列表深度 2表示显示到h1，h2，h3 */
             /* 菜单的展开配置 */
             expand: {
-                trigger: 'hover',                   /* hover | click 悬停或者点击 */
+                trigger: 'click',                   /* hover | click 悬停或者点击 */
                 clickModeDefaultOpen: true,         /* 点击模式是否默认展开 */
             },
-            customClass: '文章目录',        /* 自定义右侧菜单显示名 */
+            customClass: 'customClass',        /* 自定义右侧菜单显示名 */
             /* 忽略的路径 */
-            // ignore: [
-            //     '/',
-            //     '/api/'
-            // ],
+            ignore: [
+                '/',
+            ],
         }
     ]
 

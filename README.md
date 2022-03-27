@@ -31,6 +31,8 @@ yarn add -D  @vssue/api-github-v4@1.4.7
 yarn add -D increase-memory-limit@1.0.7
 yarn add -D vuepress-plugin-copy-code2@2.0.0-beta.27
 yarn add @renovamen/vuepress-plugin-baidu-tongji@2.0.0-alpha.17
+yarn add -D vuepress-plugin-pwa2@2.0.0-beta.27
+
 
 # 启动
 yarn docs:dev

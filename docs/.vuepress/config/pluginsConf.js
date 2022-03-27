@@ -110,7 +110,7 @@ module.exports = [
     [
         'vuepress-plugin-comment2', {
             type: "giscus", /* 服务提供者，使用 giscus */
-            comment: true, /* 是否默认启用评论 */
+            comment: false, /* 是否默认启用评论 */
             /**
                giscus配置
              */

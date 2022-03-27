@@ -15,6 +15,7 @@ module.exports = {
 
     /* 主题配置 */
     themeConfig: {
+        toc: true,       /* 开启标题列表 */
         darkMode: true,   /* 开启夜间模式 */
         logo: '/assets/img/logo.jpg',   /* 导航栏logo */
         logoDark: '/assets/img/logoDark.jpeg',  /* 夜间模式logo */

@@ -17,7 +17,8 @@
     "increase-memory-limit": "^1.0.7",
     "vuepress": "2.0.0-beta.36",
     "vuepress-plugin-copy-code2": "^2.0.0-beta.27",
-    "vuepress-plugin-pwa2": "^2.0.0-beta.27"
+    "vuepress-plugin-pwa2": "^2.0.0-beta.27",
+    "@renovamen/vuepress-plugin-baidu-tongji": "^2.0.0-alpha.17"
   },
   "scripts": {
     "docs:dev": "vuepress dev docs",

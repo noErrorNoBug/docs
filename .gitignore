@@ -109,3 +109,5 @@ dist
 .cache
 package.json
 yarn.lock
+
+secret.js

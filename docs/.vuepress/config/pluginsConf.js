@@ -59,7 +59,7 @@ module.exports = [
             /* 会被填充成 manifest.webmanifest */
             manifest: {
                 lang: "zh-CN",
-                theme_color: "#46bd87",
+                theme_color: "#F0FFF0",
                 background_color: "#ffffff",
                 display: "standalone",
                 scope: "/docs",
@@ -69,7 +69,7 @@ module.exports = [
                 description: "\u4e2a\u4eba\u540e\u7aef\u6280\u672f\u7b14\u8bb0",
             }, 
             favicon: '/favicon.ico',    /* favicon路径，文档说些绝对路径 */
-            themeColor: '#46bd87',  /* 主题颜色，默认绿色 */
+            themeColor: '#F0FFF0',  /* 主题颜色，默认绿色 */
             maxSize: 40960, /* 缓存最大值，大文档多的话调大，这里给个40M，单位KB */
             cacheHTML: false,   /* 不缓存主页和 404 错误页之外的 HTML 文件 */
             cachePic: false,    /* 不缓存图片 */
@@ -90,7 +90,7 @@ module.exports = [
              */
             apple: {
                 icon: '/icons/icon-192x192.png',   /* 苹果使用的图标地址，推荐 152×152 大小 */
-                statusBarColor: "black", /* 苹果的状态栏颜色，black | white */
+                statusBarColor: "white", /* 苹果的状态栏颜色，black | white */
                 maskIcon: '/icons/icon-256x256.png',   /* Safari 图标 */
             },
 

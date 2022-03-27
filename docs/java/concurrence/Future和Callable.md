@@ -1,9 +1,9 @@
 ---
 title: Future和Callable
 comment: true
-TOP: true
+TOC: true
 ---
-[[TOP]]
+[[TOC]]
 # Callable接口
 
 * 类似于Runnable，是一个线程执行的task
@@ -25,3 +25,6 @@ Future可以用子线程异步的执行方法，并且获取到子线程的返�
 * 是一种包装类
 * 可以把Callable转换为Future和Runnable
 * 把Callable当做参数生成FutureTask对象，然后把FutureTask当做一个Runnable让线程池执行，最后通过FutureTask获取执行结果。
+
+
+<CommentService />

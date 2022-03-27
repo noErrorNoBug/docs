@@ -20,3 +20,5 @@ features: # 特性介绍标题以及说明
 footer: Apache License 2.0 | Copyright © 2018-present noErrorNoBug  # 页脚
 comment: true
 ---
+测试：---------------------------------
+<CommentService />

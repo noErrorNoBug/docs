@@ -69,7 +69,18 @@ module.exports = [
     [
         'vuepress-plugin-pwa2', {
             showInstall: true,  /* 第一次注册成功后弹窗提示 */
-            manifest: manifest, /* 会被填充成 manifest.webmanifest */
+            /* 会被填充成 manifest.webmanifest */
+            manifest: {
+                lang: "zh-CN",
+                theme_color: "#46bd87",
+                background_color: "#ffffff",
+                display: "standalone",
+                scope: "/docs",
+                start_url: "/docs",
+                name: "\u540e\u7aef\u6280\u672f\u7b14\u8bb0",
+                short_name: "docs",
+                description: "\u4e2a\u4eba\u540e\u7aef\u6280\u672f\u7b14\u8bb0",
+            }, 
             favicon: '/favicon.ico',    /* favicon路径，文档说些绝对路径 */
             themeColor: '#46bd87',  /* 主题颜色，默认绿色 */
             maxSize: 40960, /* 缓存最大值，大文档多的话调大，这里给个40M，单位KB */

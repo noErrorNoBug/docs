@@ -30,13 +30,16 @@ yarn add -D  @vssue/vuepress-plugin-vssue@1.4.8
 yarn add -D  @vssue/api-github-v4@1.4.7
 yarn add -D increase-memory-limit@1.0.7
 yarn add -D vuepress-plugin-copy-code2@2.0.0-beta.27
-yarn add @renovamen/vuepress-plugin-baidu-tongji@2.0.0-alpha.17
+yarn add -D @renovamen/vuepress-plugin-baidu-tongji@2.0.0-alpha.17
 yarn add -D vuepress-plugin-pwa2@2.0.0-beta.27
 yarn add -D vuepress-plugin-comment2@2.0.0-beta.27
 yarn add -D vuepress-plugin-md-enhance@2.0.0-beta.27
 yarn add -D @vuepress/plugin-toc@2.0.0-beta.36
 yarn add -D @vuepress/plugin-nprogress@@2.0.0-beta.36
 yarn add -D vuepress-plugin-right-anchor@0.5.5
+yarn add -D @vuepress/shared-utils@1.9.7
+yarn add -D lru-cache@7.7.1
+yarn add -D @vue/component-compiler-utils@3.3.0
 # 启动
 yarn docs:dev
 # 构建

@@ -142,8 +142,12 @@ module.exports = [
     ],
 
     /**
-     * 开启Toc目录
+     * toc目录组件
      */
-    [   '@vuepress/plugin-toc', true    ],
+    [
+        '@vuepress/plugin-toc', {
+            componentName: 'Toc',
+        }
+    ],
 
 ]

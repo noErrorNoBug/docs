@@ -5,11 +5,11 @@ heroText: 后端技术笔记 # 主标题
 tagline: JAVA基础|JVM|并发、算法|Leetcode|领域算法、数据库|SQL|Nosql、Web容器|ORM框架、SpringFramework|SpringBoot、消息队列|Kafka、架构|分布式|微服务、项目|案例分析|技术管理、兴趣爱好|篮球|摄影|生活  # 副标题
 actions:
 # - text: 技术要点
-#     link: /zh/guide/getting-started.html
-#     type: primary
+#   link: /zh/guide/getting-started.html
+#   type: primary
 - text: 热爱生活,科学编码
-    link: \/guide.md
-    type: secondary
+  link: /guide.md
+  type: secondary
 features: # 特性介绍标题以及说明
 - title: 知识点梳理 
   details: 梳理记录后端常用技术点，形成体系，构建完整知识网络。

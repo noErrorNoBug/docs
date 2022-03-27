@@ -156,6 +156,7 @@ module.exports = [
             /* 忽略的路径 */
             ignore: [
                 '/',
+                '/docs',
             ],
         }
     ]

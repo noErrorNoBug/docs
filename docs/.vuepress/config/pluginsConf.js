@@ -124,4 +124,21 @@ module.exports = [
         },
     ],
 
+    /**
+     * MarkDown 语法增强
+     */
+    [
+        'vuepress-plugin-md-enhance', {
+            container: true,                /* 开启 自定义容器 */
+            codegroup: true,                /* 开启 代码块分组 */
+            sub: true,                      /* 开启 上角标 */
+            sup: true,                      /* 开启 下角标 */
+            align: true,                    /* 开启 自定义对齐方式 */
+            footnote: true,                 /* 开启 脚注及链接 */
+            mark: true,                     /* 开启 高亮标记 */
+            tasklist: true,                 /* 开启 任务列表 */
+            tex: true,                      /* 开启 开启tex公式 */
+        },
+    ],
+
 ]

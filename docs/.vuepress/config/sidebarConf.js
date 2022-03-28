@@ -16,8 +16,12 @@ module.exports = {
                     link: '/java/basic/面向对象编程.md',
                 },
                 {
-                    text: "思考:如何在开发中实践面向对象的思想?",
-                    link: '/java/basic/思考:如何在开发中实践面向对象的思想?.md',
+                    text: "思考-如何在开发中实践面向对象的思想",
+                    link: '/java/basic/思考如何在开发中实践面向对象的思想.md',
+                },
+                {
+                    text: "思考-贫血模型还是充血模型",
+                    link: '/java/basic/思考-贫血模型还是充血模型.md',
                 },
             ],
         },

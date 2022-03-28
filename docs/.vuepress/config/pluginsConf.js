@@ -140,5 +140,6 @@ module.exports = [
             tex: true,                      /* 开启 开启tex公式 */
         },
     ],
-    ['@vuepress/plugin-nprogress']
+    ['@vuepress/plugin-nprogress'],
+    ['@vuepress/plugin-toc']
 ]

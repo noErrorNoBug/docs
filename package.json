@@ -8,7 +8,6 @@
   "license": "MIT",
   "devDependencies": {
     "@renovamen/vuepress-plugin-baidu-tongji": "^2.0.0-alpha.17",
-    "@vssue/api-github-v4": "1.4.7",
     "@vuepress/plugin-back-to-top": "2.0.0-beta.36",
     "@vuepress/plugin-docsearch": "2.0.0-beta.36",
     "@vuepress/plugin-last-updated": "1.9.7",
@@ -20,16 +19,11 @@
     "vuepress-plugin-comment2": "^2.0.0-beta.27",
     "vuepress-plugin-copy-code2": "^2.0.0-beta.27",
     "vuepress-plugin-md-enhance": "^2.0.0-beta.27",
-    "vuepress-plugin-pwa2": "^2.0.0-beta.27",
-    "vuepress-plugin-right-anchor": "^2.0.0-rc.3",
-    "soonspacejs": "^2.3.17"
+    "vuepress-plugin-pwa2": "^2.0.0-beta.27"
   },
   "scripts": {
     "docs:dev": "vuepress dev docs",
     "docs:build": "vuepress build docs",
     "deploy": "bash deploy.sh"
-  },
-  "dependencies": {
-    "soonspacejs": "^2.3.17"
   }
 }

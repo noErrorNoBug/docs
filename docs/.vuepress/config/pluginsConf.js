@@ -140,23 +140,4 @@ module.exports = [
             tex: true,                      /* 开启 开启tex公式 */
         },
     ],
-    /**
-     * 右边栏
-     */
-    [
-        'vuepress-plugin-right-anchor',
-        {
-            showDepth: 2,   /* 标题深度 */
-            ignore: [
-                '/',
-                '/docs/'
-                /* 忽略路径 */
-            ],
-            expand: {
-                trigger: 'hover',                   /* 展开菜单的触发方式,悬浮或者点击。 hover | click */
-                clickModeDefaultOpen: true          /* 点击模式下是否默认打开菜单 */
-            },
-            customClass: '章节目录',        /* 自定义的 right-anchor 类名 */
-        }
-    ]
 ]

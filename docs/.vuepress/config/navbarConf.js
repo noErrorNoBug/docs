@@ -11,65 +11,80 @@ module.exports = [
             /**
              * [Java基础] 导航栏
              */
-            // { text: '面向对象|基础', children: [
-            //   { text: '面向对象', link: '/test' },
-            //   { text: 'Java基础', link: '/test' },
-            // ] },
+            {
+                text: '面向对象|基础', children: [
+                    { text: '面向对象特性', link: '/guide.md' },         /** 指向面向对象起始文章 */
+                    { text: 'Java基础知识', link: '/guide.md' },        /** 指向Java基础知识起始文章 */
+                    { text: 'Java泛型机制', link: '/guide.md' },        /** 指向Java泛型机制起始文章 */
+                    { text: 'Java注解机制', link: '/guide.md' },        /** 指向Java注解机制起始文章 */
+                    { text: 'Java异常机制', link: '/guide.md' },        /** 指向Java异常机制起始文章 */
+                    { text: 'Java反射机制', link: '/guide.md' },        /** 指向Java反射机制起始文章 */
+                    { text: 'JavaSPI机制', link: '/guide.md' },        /** 指向JavaSPI机制起始文章 */
+                ]
+            },
 
             /**
              * [集合框架] 导航栏
              */
-            // { text: '集合框架', children: [
-            //   { text: '集合框架原理', link: '/test' },
-            // ] },
+            {
+                text: 'JAVA 集合框架', children: [
+                    { text: 'Collection 集合', link: '/guide.md' },     /** 指向Collection 集合起始文章 */
+                    { text: 'Map 集合', link: '/guide.md' },        /** 指向Map 集合起始文章 */
+                    { text: '并发集合框架', link: '/guide.md' },        /** 指向并发集合框架起始文章 */
+                ]
+            },
 
             /**
              * [并发框架] 导航栏
              */
             {
-                text: '并发框架', children: [
-                    { text: '内存模型', link: '/java/concurrence/内存模型.md' },
-                    { text: 'synchronized关键字', link: '/java/concurrence/synchronized关键字.md' },
-                    { text: 'ThreadLocal', link: '/java/concurrence/ThreadLocal.md' },
-                    { text: '线程池', link: '/java/concurrence/线程池.md' },
-                    { text: 'CAS和原子类', link: '/java/concurrence/CAS和原子类.md' },
-                    { text: '锁', link: '/java/concurrence/锁.md' },
-                    { text: 'final和不变性', link: '/java/concurrence/final和不变性.md' },
-                    { text: '并发流程控制', link: '/java/concurrence/并发流程控制.md' },
-                    { text: 'AQS原理', link: '/java/concurrence/AQS原理.md' },
-                    { text: 'Future和Callable', link: '/java/concurrence/Future和Callable.md' },
+                text: 'JAVA 并发框架', children: [
+                    { text: '并发理论基础', link: '/guide.md' },    /** 指向并发理论基础起始文章 */
+                    { text: '多线程基础', link: '/guide.md' },      /** 指向多线程基础起始文章 */
+                    { text: '关键字详解', link: '/guide.md' },      /** 指向关键字详解起始文章 */
+                    { text: '集合与并发集合', link: '/guide.md' },      /** 指向集合与并发集合起始文章 */
+                    { text: '线程池', link: '/guide.md' },          /** 指向线程池起始文章 */
+                    { text: 'CAS原理和原子类', link: '/guide.md' },     /** 指向CAS原理和原子类起始文章 */
+                    { text: 'AQS原理和锁机制', link: '/guide.md' },     /** 指向AQS原理和锁机制起始文章 */
+                    { text: '并发流程控制', link: '/guide.md' },        /** 指向并发流程控制起始文章 */
+                    { text: 'Disruptor框架', link: '/guide.md' },       /** 指向Disruptor框架起始文章 */
+                    { text: 'ThreadLocal', link: '/guide.md' },     /** 指向ThreadLocal起始文章 */
                 ]
             },
 
             /**
              * [IO框架] 导航栏
              */
-            // { text: 'IO框架', children: [
-            //   { text: 'IO文章1', link: '/test' },
-            //   { text: 'IO文章2', link: '/test' },
-            // ] },
+            {
+                text: 'JAVA IO框架', children: [
+                    { text: 'JAVA IO', link: '/guide.md' },   /** 指向IO的起始文章 */
+                    { text: 'JAVA NIO', link: '/guide.md' },  /** 指向NIO、AIO、BIO的起始文章 */
+                ]
+            },
 
             /**
              * [JVM原理] 导航栏
              */
             {
                 text: 'JVM原理', children: [
-                    { text: '类加载机制', link: '/java/jvm/类加载机制.md' },
-                    { text: '内存模型', link: '/java/jvm/内存模型.md' },
-                    { text: '对象生命周期', link: '/java/jvm/对象生命周期.md' },
-                    { text: '垃圾回收', link: '/java/jvm/垃圾回收.md' },
-                    { text: '监控工具', link: '/java/jvm/监控工具.md' },
-                    { text: '调优实战', link: '/java/jvm/调优实战.md' },
+                    { text: 'JVM类加载机制', link: '/java/jvm/类加载机制.md' },     /** 指向类加载机制的起始文章 */
+                    { text: 'JVM内存知识', link: '/java/jvm/类加载机制.md' },       /** 指向JVM内存知识的起始文章 */
+                    { text: 'JVM垃圾回收原理', link: '/java/jvm/内存模型.md' },     /** 指向JVM垃圾回收原理的起始文章 */
+                    { text: 'JVM调优思路', link: '/java/jvm/对象生命周期.md' },     /** 指向JVM调优思路的起始文章 */
+                    { text: 'JVM线上调试排查', link: '/java/jvm/垃圾回收.md' },     /** 指向JVM线上调试排查的起始文章 */
                 ]
             },
 
             /**
              * [版本特性] 导航栏
              */
-            // { text: '版本特性', children: [
-            //   { text: 'JDK8升级JDK11', link: '/test' },
-            //   { text: '11-17特性', link: '/test' },
-            // ] },
+            {
+                text: 'JAVA 版本特性', children: [
+                    { text: 'Java8特性', link: '/java/version/java8/java8特性知识体系.md' },                   /** 指向java8特性的起始文章 */
+                    { text: 'java8升java11特性', link: '/java/version/java11/java9到java11特性知识体系.md' },   /** 指向java11特性的起始文章 */
+                    { text: 'java11升java17特性', link: '/java/version/java17/java12到java17特性知识体系.md' }, /** 指向java17特性的起始文章 */
+                ]
+            },
         ]
     },
 

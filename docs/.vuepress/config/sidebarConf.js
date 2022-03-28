@@ -61,10 +61,22 @@ module.exports = {
             sidebarDepth: 2,
             collapsible: false,
             children: [
+                /**
+                 * 类加载机制子模块
+                 * 导航栏类加载机制指向此处，内容分开讲，对象生命周期看看是否需要拿过来
+                 */
                 {
                     text: "类加载机制",
                     link: '/java/jvm/类加载机制.md',
                 },
+                {
+                    text: "类字节码",
+                    link: '/java/jvm/类加载机制.md',
+                },
+                /**
+                 * JVM内存知识子模块
+                 * JVM内存知识指向此处，将内容拆分分开讲
+                 */
                 {
                     text: "内存模型",
                     link: '/java/jvm/内存模型.md',
@@ -73,17 +85,140 @@ module.exports = {
                     text: "对象生命周期",
                     link: '/java/jvm/对象生命周期.md',
                 },
+                /**
+                 * 垃圾回收子模块
+                 * 垃圾回收导航栏指向此处，将垃圾回收拆开，垃圾回收算法挪到算法模块
+                 */
                 {
                     text: "垃圾回收",
                     link: '/java/jvm/垃圾回收.md',
                 },
+                /**
+                 * JVM调优子模块
+                 * JVM调优导航栏指向此处，将调优拆分开讲
+                 */
+                {
+                    text: "调优实战",
+                    link: '/java/jvm/调优实战.md',
+                },
+                /**
+                 * JVM线上调试排查
+                 * JVM线上调试排查指向此处，并且需要拆开讲
+                 */
                 {
                     text: "监控工具",
                     link: '/java/jvm/监控工具.md',
                 },
+            ],
+        },
+
+        /**
+         * JAVA版本特性
+         */
+        {
+            text: 'JAVA版本特性',
+            sidebarDepth: 2,
+            collapsible: false,
+            children: [
+                /**
+                 * Java8特性子模块
+                 * Java8特性子模块导航栏指向此处
+                 */
                 {
-                    text: "调优实战",
-                    link: '/java/jvm/调优实战.md',
+                    text: "java8特性知识体系",
+                    link: '/java/version/java8/java8特性知识体系.md',
+                },
+                {
+                    text: "函数式编程",
+                    link: '/java/version/java8/函数式编程.md',
+                },
+                {
+                    text: "Optional类",
+                    link: '/java/version/java8/Optional类.md',
+                },
+                {
+                    text: "默认方法",
+                    link: '/java/version/java8/默认方法.md',
+                },
+                {
+                    text: "注解特性",
+                    link: '/java/version/java8/注解特性.md',
+                },
+                {
+                    text: "类型推断优化",
+                    link: '/java/version/java8/类型推断优化.md',
+                },
+                {
+                    text: "精简JRE",
+                    link: '/java/version/java8/精简JRE.md',
+                },
+                {
+                    text: "JVM移除元空间",
+                    link: '/java/version/java8/JVM移除元空间.md',
+                },
+                {
+                    text: "StampedLock",
+                    link: '/java/version/java8/StampedLock.md',
+                },
+                {
+                    text: "LocalDate和LocalDateTime",
+                    link: '/java/version/java8/LocalDate和LocalDateTime.md',
+                },
+                {
+                    text: "其他更新",
+                    link: '/java/version/java8/其他更新.md',
+                },
+                /**
+                 * java8升java11特性
+                 * java8升java11特性导航栏指向此处
+                 */
+                {
+                    text: "java9到java11特性知识体系",
+                    link: '/java/version/java11/java9到java11特性知识体系.md',
+                },
+                {
+                    text: "java9特性",
+                    link: '/java/version/java11/java9特性.md',
+                },
+                {
+                    text: "java10特性",
+                    link: '/java/version/java11/java10特性.md',
+                },
+                {
+                    text: "java11特性",
+                    link: '/java/version/java11/java11特性.md',
+                },
+                /**
+                 * java11升java17特性
+                 * java11升java17特性导航栏指向此处
+                 */
+                {
+                    text: "java12到java17特性知识体系",
+                    link: '/java/version/java17/java12到java17特性知识体系.md',
+                },
+                {
+                    text: "java12特性",
+                    link: '/java/version/java17/java12特性.md',
+                },
+                {
+                    text: "java13特性",
+                    link: '/java/version/java17/java13特性.md',
+                },
+                {
+                    text: "java14特性",
+                    link: '/java/version/java17/java14特性.md',
+                },
+                {
+                    text: "java15特性",
+                    link: '/java/version/java17/java15特性.md',
+                },
+                {
+                    text: "java16特性",
+                    link: '/java/version/java17/java16特性.md',
+                },
+                {
+                    text: "java17特性",
+                    link: '/java/version/java17/java17特性.md',
                 },
             ],
         },

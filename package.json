@@ -19,8 +19,7 @@
     "vuepress-plugin-comment2": "^2.0.0-beta.27",
     "vuepress-plugin-copy-code2": "^2.0.0-beta.27",
     "vuepress-plugin-md-enhance": "^2.0.0-beta.27",
-    "vuepress-plugin-pwa2": "^2.0.0-beta.27",
-    "vuepress-plugin-side-anchor": "^1.0.7"
+    "vuepress-plugin-pwa2": "^2.0.0-beta.27"
   },
   "scripts": {
     "docs:dev": "vuepress dev docs",

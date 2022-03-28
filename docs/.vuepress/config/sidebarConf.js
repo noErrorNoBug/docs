@@ -4,6 +4,38 @@ module.exports = {
      */
     '/java/': [
         /*
+         * [面向对象|基础]模块 侧边栏
+         */
+        {
+            text: '面向对象|基础',   // 必填，标题
+            sidebarDepth: 2,    // 深度 2层，展示H0，H1，H2
+            collapsible: false,  // 是否可折叠，有childre才可用
+            children: [
+                {
+                    text: "面向对象编程",
+                    link: '/java/basic/面向对象编程.md',
+                },
+                {
+                    text: "思考:如何在开发中实践面向对象的思想?",
+                    link: '/java/basic/思考:如何在开发中实践面向对象的思想?.md',
+                },
+            ],
+        },
+        /*
+         * [JAVA 集合框架]模块 侧边栏
+         */
+        {
+            text: 'JAVA 集合框架',   // 必填，标题
+            sidebarDepth: 2,    // 深度 2层，展示H0，H1，H2
+            collapsible: false,  // 是否可折叠，有childre才可用
+            children: [
+                {
+                    text: "内存模型",
+                    link: '/java/concurrence/内存模型.md',
+                },
+            ],
+        },
+        /*
          * [并发框架]模块 侧边栏
          */
         {
@@ -50,6 +82,20 @@ module.exports = {
                 {
                     text: "Future和Callable",
                     link: '/java/concurrence/Future和Callable.md',
+                },
+            ],
+        },
+        /*
+         * [JAVA IO框架]模块 侧边栏
+         */
+        {
+            text: 'JAVA IO框架',   // 必填，标题
+            sidebarDepth: 2,    // 深度 2层，展示H0，H1，H2
+            collapsible: false,  // 是否可折叠，有childre才可用
+            children: [
+                {
+                    text: "内存模型",
+                    link: '/java/concurrence/内存模型.md',
                 },
             ],
         },
@@ -111,12 +157,11 @@ module.exports = {
                 },
             ],
         },
-
         /**
          * JAVA版本特性
          */
         {
-            text: 'JAVA版本特性',
+            text: 'JAVA 版本特性',
             sidebarDepth: 2,
             collapsible: false,
             children: [

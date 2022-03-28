@@ -37,22 +37,18 @@ module.exports = [
         text: 'Java',
         children: [
             /**
-             * [Java基础] 导航栏
+             * [面向对象|基础] 导航栏
              */
             {
                 text: '面向对象|基础', children: [
                     { text: '面向对象特性', link: '/guide.md' },         /** 指向面向对象起始文章 */
                     { text: 'Java基础知识', link: '/guide.md' },        /** 指向Java基础知识起始文章 */
-                    { text: 'Java泛型机制', link: '/guide.md' },        /** 指向Java泛型机制起始文章 */
-                    { text: 'Java注解机制', link: '/guide.md' },        /** 指向Java注解机制起始文章 */
-                    { text: 'Java异常机制', link: '/guide.md' },        /** 指向Java异常机制起始文章 */
-                    { text: 'Java反射机制', link: '/guide.md' },        /** 指向Java反射机制起始文章 */
-                    { text: 'JavaSPI机制', link: '/guide.md' },        /** 指向JavaSPI机制起始文章 */
+                    { text: 'Java高级特性', link: '/guide.md' },        /** 指向高级特性起始文章 */
                 ]
             },
 
             /**
-             * [集合框架] 导航栏
+             * [JAVA 集合框架] 导航栏
              */
             {
                 text: 'JAVA 集合框架', children: [
@@ -82,7 +78,7 @@ module.exports = [
             },
 
             /**
-             * [IO框架] 导航栏
+             * [JAVA IO框架] 导航栏
              */
             {
                 text: 'JAVA IO框架', children: [
@@ -105,7 +101,7 @@ module.exports = [
             },
 
             /**
-             * [版本特性] 导航栏
+             * [JAVA 版本特性] 导航栏
              */
             {
                 text: 'JAVA 版本特性', children: [

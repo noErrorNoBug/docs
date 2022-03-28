@@ -1,7 +1,3 @@
----
-title: Future和Callable
----
-
 # Callable接口
 
 * 类似于Runnable，是一个线程执行的task

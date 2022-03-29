@@ -41,7 +41,7 @@ module.exports = [
              */
             {
                 text: '面向对象|基础', children: [
-                    { text: '面向对象特性', link: '/guide.md' },         /** 指向面向对象起始文章 */
+                    { text: '面向对象特性', link: '/java/basic/面向对象编程.md' },         /** 指向面向对象起始文章 */
                     { text: 'Java基础知识', link: '/guide.md' },        /** 指向Java基础知识起始文章 */
                     { text: 'Java高级特性', link: '/guide.md' },        /** 指向高级特性起始文章 */
                 ]

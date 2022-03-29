@@ -29,7 +29,7 @@ module.exports = {
                 },
                 {
                     text: "Java泛型机制",
-                    link: 'docs/java/basic/Java泛型机制.md',
+                    link: '/java/basic/Java泛型机制.md',
                 },
                 {
                     text: "Java注解机制",

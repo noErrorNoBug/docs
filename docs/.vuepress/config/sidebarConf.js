@@ -23,6 +23,30 @@ module.exports = {
                     text: "思考-贫血模型还是充血模型",
                     link: '/java/basic/思考-贫血模型还是充血模型.md',
                 },
+                {
+                    text: "Java基础知识",
+                    link: '/java/basic/Java基础知识.md',
+                },
+                {
+                    text: "Java泛型机制",
+                    link: 'docs/java/basic/Java泛型机制.md',
+                },
+                {
+                    text: "Java注解机制",
+                    link: '/java/basic/Java注解机制.md',
+                },
+                {
+                    text: "Java异常机制",
+                    link: '/java/basic/Java异常机制.md',
+                },
+                {
+                    text: "Java反射机制",
+                    link: '/java/basic/Java反射机制.md',
+                },
+                {
+                    text: "JavaSPI机制",
+                    link: '/java/basic/JavaSPI机制.md',
+                },
             ],
         },
         /*

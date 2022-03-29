@@ -21,7 +21,7 @@ module.exports = {
         lastUpdated: true,   /* 开启更新时间 */
         lastUpdatedText: "更新时间",    /* 更新时间前缀 */
         contributors: true, /* 开启撰稿人 */
-        contributorsText: "撰稿人",   /* 撰稿人前缀 */
+        contributorsText: "贡献者",   /* 撰稿人前缀 */
         backToHome: "返回主页", /* 404返回主页提示 */
         notFound: ["页面不见啦！", "地址不正确！"], /* 404提示 */
         repo: 'https://github.com/noErrorNoBug',   /* 导航栏设置仓库地址 */

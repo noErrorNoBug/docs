@@ -28,6 +28,10 @@ module.exports = {
                     link: '/java/basic/Java基础知识.md',
                 },
                 {
+                    text: "Java中的String",
+                    link: '/java/basic/Java中的String.md',
+                },
+                {
                     text: "Java泛型机制",
                     link: '/java/basic/Java泛型机制.md',
                 },

@@ -81,7 +81,7 @@ export default defineSidebarConfig({
     {
       text: "JAVA8版本特性.md",
       collapsable: false,
-      prefix: "version/",
+      prefix: "version/java8/",
       children: [
         "java8特性知识体系.md", /** Java8特性子模块导航栏指向此处 */
         "函数式编程.md",
@@ -103,7 +103,7 @@ export default defineSidebarConfig({
      {
       text: "JAVA11版本特性",
       collapsable: false,
-      prefix: "version/",
+      prefix: "version/java11/",
       children: [
         "java9到java11特性知识体系.md", /** java8升java11特性导航栏指向此处 */
         "java9特性.md",
@@ -117,7 +117,7 @@ export default defineSidebarConfig({
      {
       text: "JAVA17版本特性",
       collapsable: false,
-      prefix: "version/",
+      prefix: "version/java17/",
       children: [
         "java12到java17特性知识体系.md", /** java11升java17特性导航栏指向此处 */
         "java12特性.md",

@@ -1,8 +1,18 @@
 ---
-title: NIO和Epoll
+title: title
+prev:
+  text: 回到首页
+  link: /README.md
+next:
+  text: 回到首页
+  link: /README.md
 ---
+::: info
+文章介绍
+:::
 [[toc]]
 
+***
 # BIO模型
 
 **BIO（Blocking IO）是同步阻塞模型，BIO模型中的Read操作是阻塞的，一个线程只能处理一个连接**，连接保持时会导致线程的阻塞，导致资源浪费；如果线程很多会导致服务器压力过大。

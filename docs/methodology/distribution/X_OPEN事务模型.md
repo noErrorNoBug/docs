@@ -1,3 +1,18 @@
+---
+title: title
+prev:
+  text: 回到首页
+  link: /README.md
+next:
+  text: 回到首页
+  link: /README.md
+---
+::: info
+文章介绍
+:::
+[[toc]]
+
+***
 XA事务模型定义了一套分布式事务处理标准，使用**两阶段提交2PC**保证分布式事务的完整性。
 
 XA模型中包含以下三种角色：

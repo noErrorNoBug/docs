@@ -1,3 +1,18 @@
+---
+title: title
+prev:
+  text: 回到首页
+  link: /README.md
+next:
+  text: 回到首页
+  link: /README.md
+---
+::: info
+文章介绍
+:::
+[[toc]]
+
+***
 # 创建OpenFeign代理
 
 OpenFeign创建代理对象主要是基于JDK的动态代理实现的，下面先来看一下JDK的动态代理的创建过程。

@@ -10,9 +10,9 @@ next:
 ::: info
 之所以把String单独拿出来讲，是因为在面试中，很容易通过问String、StringBuilder、StringBuffer而把深度引导至JVM和并发框架中去。
 :::
-<Toc />
+[[toc]]
 
----
+***
 
 ## String 的不可变性
 &#8195;&#8195;String类是不可变的，被final修饰，同时它也是由不可变的char数组组成，也就是它的值被初始化后，也是不可更改的了。

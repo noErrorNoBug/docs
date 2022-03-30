@@ -1,3 +1,18 @@
+---
+title: title
+prev:
+  text: 回到首页
+  link: /README.md
+next:
+  text: 回到首页
+  link: /README.md
+---
+::: info
+文章介绍
+:::
+[[toc]]
+
+***
 Spring Cloud LoadBalancer 与 Ribbon 类似，是一个客户端负载均衡器，但是由于 Netflix 的 Ribbon 进入维护，而且 Ribbon1 和 Ribbon2 并不兼容，Spring Cloud Commons 项目中，使用了 LoadBalancer 作为默认负载均衡器，同时 SC 也推荐其作为替代。
 
 另外，LoadBalancer 对 Ribbon、Eureka、Zuul、Hystrix 等做了兼容，而且Gateway、Nacos、Sentinel也都支持 LoadBalancer，因此可以通过简单的依赖和配置，在项目中使用这一组件。

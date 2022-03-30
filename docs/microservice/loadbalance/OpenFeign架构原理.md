@@ -1,3 +1,18 @@
+---
+title: title
+prev:
+  text: 回到首页
+  link: /README.md
+next:
+  text: 回到首页
+  link: /README.md
+---
+::: info
+文章介绍
+:::
+[[toc]]
+
+***
 在微服务系统中，我们经常用到RPC调用，OpenFeign就是基于Feign项目的一套声明式、模板化的Http客户端。OpenFeign对Feign进行了增强，支持Spring MVC的注解，同时整合了Eureka、Nacos、Gateway、LoadBalancer等组件，使得Feign的使用更加便捷。
 
 # 使用场景

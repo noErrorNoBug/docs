@@ -1,3 +1,18 @@
+---
+title: title
+prev:
+  text: 回到首页
+  link: /README.md
+next:
+  text: 回到首页
+  link: /README.md
+---
+::: info
+文章介绍
+:::
+[[toc]]
+
+***
 # 事务的ACID特性
 
 * 原子性：事务必须是原子工作单元，不可继续分割，要么全部成功，要么全部失败。

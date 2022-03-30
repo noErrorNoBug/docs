@@ -1,30 +1,16 @@
 {
   "name": "docs",
-  "version": "1.0.0",
-  "description": "后端技术笔记",
-  "main": "index.js",
-  "repository": "git@github.com:noErrorNoBug/docs.git",
-  "author": "sunqiang <749922109@qq.com>",
-  "license": "MIT",
-  "devDependencies": {
-    "@renovamen/vuepress-plugin-baidu-tongji": "^2.0.0-alpha.17",
-    "@vuepress/plugin-back-to-top": "2.0.0-beta.36",
-    "@vuepress/plugin-docsearch": "2.0.0-beta.36",
-    "@vuepress/plugin-last-updated": "1.9.7",
-    "@vuepress/plugin-medium-zoom": "2.0.0-beta.36",
-    "@vuepress/plugin-nprogress": "^2.0.0-beta.36",
-    "@vuepress/plugin-search": "2.0.0-beta.36",
-    "@vuepress/plugin-toc": "2.0.0-beta.36",
-    "increase-memory-limit": "^1.0.7",
-    "vuepress": "2.0.0-beta.36",
-    "vuepress-plugin-comment2": "^2.0.0-beta.27",
-    "vuepress-plugin-copy-code2": "^2.0.0-beta.27",
-    "vuepress-plugin-md-enhance": "^2.0.0-beta.27",
-    "vuepress-plugin-pwa2": "^2.0.0-beta.27"
-  },
+  "version": "2.0.0",
+  "description": "noErrorNoBug(sunqiang)的后端技术笔记",
+  "license": "Apache License 2.0",
   "scripts": {
-    "docs:dev": "vuepress dev docs",
     "docs:build": "vuepress build docs",
-    "deploy": "bash deploy.sh"
+    "docs:clean-dev": "vuepress dev docs --clean-cache",
+    "docs:dev": "vuepress dev docs"
+  },
+  "devDependencies": {
+    "@vuepress/plugin-search": "2.0.0-beta.36",
+    "vuepress": "^2.0.0-beta.36",
+    "vuepress-theme-hope": "^2.0.0-beta.28"
   }
 }

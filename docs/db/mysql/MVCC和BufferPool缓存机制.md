@@ -1,3 +1,18 @@
+---
+title: title
+prev:
+  text: 回到首页
+  link: /README.md
+next:
+  text: 回到首页
+  link: /README.md
+---
+::: info
+文章介绍
+:::
+[[toc]]
+
+***
 Mysql在可重复读隔离级别下如何保证事务较高的隔离性，同样的sql查询语句在一个事务里多次执行查询结果相同，就算其他事务对数据有修改也不会影响当前事务sql语句的查询结果。
 
 这个隔离性在Mysql中就是靠MVCC（Multi-Version Concurrency Control）机制保证的，对一行数据的读和写两个操作是不会通过加锁互斥来保证隔离性，避免了频繁加锁互斥，而在串行化隔离界别为了保证较高隔离性通过加锁互斥来实现。

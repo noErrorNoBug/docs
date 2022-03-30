@@ -1,3 +1,18 @@
+---
+title: title
+prev:
+  text: 回到首页
+  link: /README.md
+next:
+  text: 回到首页
+  link: /README.md
+---
+::: info
+文章介绍
+:::
+[[toc]]
+
+***
 # Contract 契约组件
 
 类似于LoadBalancer，我们可以通过其NamedContextFactory的实现类FeignContext的构造函数，查看到其默认配置类是FeignClientsConfiguration：

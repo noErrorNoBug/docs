@@ -1,3 +1,18 @@
+---
+title: title
+prev:
+  text: 回到首页
+  link: /README.md
+next:
+  text: 回到首页
+  link: /README.md
+---
+::: info
+文章介绍
+:::
+[[toc]]
+
+***
 # Redis高性能IO模型
 
 **Redis的单线程主要指的是Redis的网络IO和键值对的读写是由单线程完成的**，这也是Redis对外提供键值存储服务的主流程。但是其他功能如持久化、异步删除、集群数据同步等，是由额外的线程提供的。

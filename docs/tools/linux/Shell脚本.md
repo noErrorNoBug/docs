@@ -1,3 +1,18 @@
+---
+title: title
+prev:
+  text: 回到首页
+  link: /README.md
+next:
+  text: 回到首页
+  link: /README.md
+---
+::: info
+文章介绍
+:::
+[[toc]]
+
+***
 # Linux启动过程
 
 1. BIOS：主板功能，基本的输入输出，选择引导介质如硬盘或光盘

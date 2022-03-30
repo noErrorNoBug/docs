@@ -1,3 +1,18 @@
+---
+title: title
+prev:
+  text: 回到首页
+  link: /README.md
+next:
+  text: 回到首页
+  link: /README.md
+---
+::: info
+文章介绍
+:::
+[[toc]]
+
+***
 # 消息压缩机制
 
 不管哪个版本Kafka，消息分为两个维度，Message Set 和Message，也就是消息集合以及消息，一个消息一般是由多条日志log组成的，Kafka通常不会直接操作消息，而是操作消息集合。**Kafka做消息****压缩****的地方主要有两个：生产者端和Broker。其中以****生产者****端为主，Broker只是处理部分特殊情况**。

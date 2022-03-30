@@ -1,3 +1,18 @@
+---
+title: title
+prev:
+  text: 回到首页
+  link: /README.md
+next:
+  text: 回到首页
+  link: /README.md
+---
+::: info
+文章介绍
+:::
+[[toc]]
+
+***
 **为了能够顺序的访问临界资源，Java提供了两种方式实现同步互斥访问：synchronized和Lock**。
 
 # synchronized使用方式

@@ -1,3 +1,18 @@
+---
+title: title
+prev:
+  text: 回到首页
+  link: /README.md
+next:
+  text: 回到首页
+  link: /README.md
+---
+::: info
+文章介绍
+:::
+[[toc]]
+
+***
 WebSocket最大的特点是实现了服务器端的推送，可以支持双向通信。默认使用80或者443端口，兼容HTTP协议，实现协议升级。
 
 # Frame帧整体示意图

@@ -1,3 +1,18 @@
+---
+title: title
+prev:
+  text: 回到首页
+  link: /README.md
+next:
+  text: 回到首页
+  link: /README.md
+---
+::: info
+文章介绍
+:::
+[[toc]]
+
+***
 Redis提供了一系列命令来监控和测试当前环境下的基线性能，可以通过这些工具检测Redis基线判断是否变慢需要优化。
 
 # 自身操作特性影响

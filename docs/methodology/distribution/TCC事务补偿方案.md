@@ -1,3 +1,18 @@
+---
+title: title
+prev:
+  text: 回到首页
+  link: /README.md
+next:
+  text: 回到首页
+  link: /README.md
+---
+::: info
+文章介绍
+:::
+[[toc]]
+
+***
 TCC（Try-Confirm-Cancel）是一种比较成熟的分布式一致性解决方案，实际上是把业务拆分成如下三个步骤：
 
 1. Try：这个阶段主要是对**数据**进行**校验**或者**资源的预留**。

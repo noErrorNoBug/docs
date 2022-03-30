@@ -1,3 +1,18 @@
+---
+title: title
+prev:
+  text: 回到首页
+  link: /README.md
+next:
+  text: 回到首页
+  link: /README.md
+---
+::: info
+文章介绍
+:::
+[[toc]]
+
+***
 # 不变性
 
 如果一个对象被创建后，就不能被修改，那么就是不可变的。这里的不可变指的是对象的引用、成员变量都不可变。

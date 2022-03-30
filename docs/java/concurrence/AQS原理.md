@@ -1,3 +1,18 @@
+---
+title: title
+prev:
+  text: 回到首页
+  link: /README.md
+next:
+  text: 回到首页
+  link: /README.md
+---
+::: info
+文章介绍
+:::
+[[toc]]
+
+***
 # AQS的作用
 
 AQS的全称是AbstractQueuedSynchronizer类，大部分的JUC并发工具类都是通过内部实现一个Sync类，继承AQS类来实现AQS的功能，以并发的控制线程和资源。通过实现AQS，可以实现以下的功能：

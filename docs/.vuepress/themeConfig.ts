@@ -94,9 +94,9 @@ export default defineThemeConfig({
     },
 
     /** 图片预览插件 */
-    photoSwipe: {
-      selector: ".theme-default-content :not(a) > img", /* 除了<a>标签的所有 img标签图片都可以缩放和预览 */
-    },
+    // photoSwipe: {
+    //   selector: ".theme-default-content :not(a) > img", /* 除了<a>标签的所有 img标签图片都可以缩放和预览 */
+    // },
 
     /** 代码一键复制 */
     copyCode: {

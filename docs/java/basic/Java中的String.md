@@ -4,8 +4,8 @@ prev:
   text: Java基础知识
   link: /java/basic/Java基础知识.md
 next:
-  text: Java泛型机制
-  link: /java/basic/Java泛型机制.md
+  text: Java中的空值处理
+  link: /java/basic/Java中的空值处理.md
 ---
 ::: info
 之所以把String单独拿出来讲，是因为在面试中，很容易通过问String、StringBuilder、StringBuffer而把深度引导至JVM和并发框架中去。
@@ -49,10 +49,11 @@ String s4 = "bbb";
 String s5 = "bbb";
 System.out.println(s4 == s5);  // true
 ```
-
+&#8195;&#8195;在某些大量重复使用某些字符串，以及字符串拼接的场景，可以适当使用intern()方法提升效率，避免重复构建String对象或者StringBuilder对象（Java编译器优化时，更倾向于将字符串拼接优化为StringBuilder，每次都会新建StringBuilder对象）。但是应该注意，正常情况下不要滥用intern()。
 ::: tip
 Java8以后的版本，字符串常量池的位置被移动到了本地方法Native Method中。
 :::
+
 
 ***
 参考：

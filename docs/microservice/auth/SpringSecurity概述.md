@@ -27,7 +27,7 @@ public class SecurityConfig {
 ```
 
 ## Filter和FilterChain原理
-![Filter原理](/images/microservice/auth/Filter原理.jpeg)
+![Filter原理](/images/microservice/auth/Filter原理.png)
 &#8195;&#8195;Spring Security的Filter在Http请求到达Controller之前，过滤每一个想要传入的Http请求。
 &#8195;&#8195;FilterChain则是由Security组件的多个功能不同的Filter组成的过滤器链，共同完成认证和授权的功能，下图是一个FilterChain的过程举例。
 ![FilterChain原理](/images/microservice/auth/FilterChain原理.png)

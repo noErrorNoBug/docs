@@ -519,10 +519,10 @@ export default defineNavbarConfig([
        * [安全和认证] 导航栏
        */
       {
-        text: "安全和认证", children: [
-          { text: "Oauth2:开放授权", link: "/guide.md" },          /** 指向Oauth2:开放授权起始文章 */
+        text: "认证授权", children: [
+          { text: "SpringSecurity", link: "/microservice/auth/SpringSecurity核心原理.md" },          /** 指向SpringSecurity:服务安全起始文章 */
           { text: "JWT:令牌传输", link: "/guide.md" },             /** 指向JWT:令牌传输起始文章 */
-          { text: "SpringSecurity:服务安全", link: "/guide.md" },          /** 指向SpringSecurity:服务安全起始文章 */
+          { text: "Oauth2:开放授权", link: "/guide.md" },          /** 指向Oauth2:开放授权起始文章 */
         ]
       },
 

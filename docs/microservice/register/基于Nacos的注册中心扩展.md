@@ -74,3 +74,6 @@ spring:
 
 
 
+***
+参考
+- Spring Cloud Alibaba 微服务原理与实战[谭峰(mic)]. 中国工信出版社,电子工业出版社

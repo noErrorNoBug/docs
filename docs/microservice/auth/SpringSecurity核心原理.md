@@ -1,30 +1,29 @@
 ---
-title: SpringSecurity概述
+title: SpringSecurity核心原理
 next:
   text: Java注解机制
   link: /java/basic/Java注解机制.md
 ---
 ::: info
-&#8195;&#8195;认证解决的是"我是谁"的问题，授权解决的是"我能做什么"的问题。在Spring Security的底层机制中，是通过Filter和FilterChain来实现认证和授权的，Filter和客户端的交互则是通过请求/响应中的字段完成的。
+&#8195;&#8195;认证解决的是"我是谁"的问题，授权解决的是"我能做什么"的问题。在Spring Security的底层机制中，是通过**Filter和FilterChain**来实现认证和授权的，Filter和客户端的交互则是通过请求/响应中的字段完成的。
 :::
 [[toc]]
 ***
-
-## 集成SpringSecurity
-&#8195;&#8195;SpringSecurity集成在SpringBoot项目中，只需要引入依赖，然后使用默认配置就可以使用。
-```xml 
+## 快速开始
+&#8195;&#8195;SpringSecurity集成比较简单，只需要加入依赖即可：
+```xml
 <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-security</artifactId>
-        </dependency>
+  <groupId>org.springframework.boot</groupId>
+  <artifactId>spring-boot-starter-security</artifactId>
+</dependency>
 ```
-&#8195;&#8195;配置文件如下，只需要通过@EnableWebSecurity进行开启即可：
-```java 
-@Configuration
-@EnableWebSecurity
-public class SecurityConfig {
-}
-```
+## 登录认证原理
+### 前后端分离下一般的登录认证流程
+![前后端分离登录认证流程](/images/microservice/auth/前后端分离登录认证流程.png)
+&#8195;&#8195;如图所示是一般单体应用前后端分离架构下的登录认证的流程，资源认证的核心就是token。关于其基本原理我们以这个案例进行展开
+
+### Spring Security执行认证的流程
+&#8195;&#8195;Spring Security的本质是一个过滤器链，其认证和授权的功能就是在多个过滤器的执行下完成的，数据则是通过请求/响应中的字段进行交互。Spring Security中的内置过滤器共有15个，分别负责不同的作用(大部分很少用到，可以只关注用到的)。
 
 ## Filter和FilterChain原理
 ![Filter原理](/images/microservice/auth/Filter原理.png)
@@ -40,6 +39,3 @@ public class SecurityConfig {
 - FilterSecurityinterceptor：过滤安全拦截器。用于授权逻辑的实现。
 
 
-## 基本认证模式
-### HTTP Basic Auth 认证流程
-![HTTPBasic认证流程](/images/microservice/auth/HTTPBasic认证流程.png)

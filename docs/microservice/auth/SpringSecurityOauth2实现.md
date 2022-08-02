@@ -1,11 +1,11 @@
 ---
 title: SpringSecurityOauth2实现
 prev:
-  text: SpringSecurityOauth2实现
-  link: /microservice/auth/SpringSecurityOauth2实现.md
+  text: Oauth2核心原理
+  link: /microservice/auth/Oauth2核心原理.md
 next:
-  text: SpringSecurityOauth2实现
-  link: /microservice/auth/SpringSecurityOauth2实现.md
+  text: JWT核心原理
+  link: /microservice/auth/JWT核心原理.md
 ---
 ::: info
 &#8195;&#8195;[SpringSecurity](SpringSecurity%E6%A0%B8%E5%BF%83%E5%8E%9F%E7%90%86.md)是一个能够为基于Spring的企业应用系统提供声明式的安全访问控制解决方案的安全框架。SpringSecurity主要实现了认证和授权的功能。

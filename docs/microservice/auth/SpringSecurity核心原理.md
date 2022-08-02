@@ -1,8 +1,11 @@
 ---
 title: SpringSecurity核心原理
+prev:
+  text: SpringSecurity核心原理
+  link: /microservice/auth/SpringSecurity核心原理.md
 next:
-  text: Java注解机制
-  link: /java/basic/Java注解机制.md
+  text: Oauth2核心原理
+  link: /microservice/auth/Oauth2核心原理.md
 ---
 ::: info
 &#8195;&#8195;SpringSecurity主要解决的事**认证和授权**的问题。认证解决的是"我是谁"的问题，授权解决的是"我能做什么"的问题。

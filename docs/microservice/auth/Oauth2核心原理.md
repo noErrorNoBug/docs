@@ -1,11 +1,11 @@
 ---
 title: Oauth2核心原理
 prev:
-  text: Oauth2核心原理
-  link: /microservice/auth/Oauth2核心原理.md
+  text: SpringSecurity核心原理
+  link: /microservice/auth/SpringSecurity核心原理.md
 next:
-  text: Oauth2核心原理
-  link: /microservice/auth/Oauth2核心原理.md
+  text: SpringSecurityOauth2实现
+  link: /microservice/auth/SpringSecurityOauth2实现.md
 ---
 ::: info
 &#8195;&#8195;OAuth2(Open Authenritation)是一个授权的开放网络标准，允许用户授权第三方应用提供他们存储在其他服务提供者上的信息，而不需要将用户名和密码提供给第三方应用或分享他们数据的所有内容。Oauth2协议：https://datatracker.ietf.org/doc/html/rfc6749

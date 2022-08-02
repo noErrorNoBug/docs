@@ -1,8 +1,8 @@
 ---
 title: SpringSecurity实现OOS
 prev:
-  text: SpringSecurity实现OOS
-  link: /microservice/auth/SpringSecurity实现OOS.md
+  text: JWT核心原理
+  link: /microservice/auth/JWT核心原理.md
 next:
   text: SpringSecurity实现OOS
   link: /microservice/auth/SpringSecurity实现OOS.md

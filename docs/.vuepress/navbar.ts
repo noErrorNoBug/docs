@@ -498,7 +498,7 @@ export default defineNavbarConfig([
        */
       {
         text: "容错限流降级", children: [
-          { text: "Gateway:高可用网关API", link: "/guide.md" },          /** 指向Gateway:高可用网关API起始文章 */
+          { text: "Gateway:高可用网关API", link: "/microservice/gateway/Gateway核心原理.md" },          /** 指向Gateway:高可用网关API起始文章 */
           { text: "Sentinel:限流和降级", link: "/guide.md" },          /** 指向Sentinel:限流和降级起始文章 */
           { text: "Dubbo:RPC调用", link: "/guide.md" },          /** 指向Dubbo:RPC调用起始文章 */
         ]
@@ -520,9 +520,10 @@ export default defineNavbarConfig([
        */
       {
         text: "认证授权", children: [
-          { text: "SpringSecurity", link: "/microservice/auth/SpringSecurity核心原理.md" },          /** 指向SpringSecurity:服务安全起始文章 */
-          { text: "JWT:令牌传输", link: "/guide.md" },             /** 指向JWT:令牌传输起始文章 */
-          { text: "Oauth2:开放授权", link: "/guide.md" },          /** 指向Oauth2:开放授权起始文章 */
+          { text: "Spring Security", link: "/microservice/auth/SpringSecurity核心原理.md" },          /** 指向SpringSecurity:服务安全起始文章 */
+          { text: "Oauth2:开放授权", link: "/microservice/auth/Oauth2核心原理.md" },          /** 指向Oauth2:开放授权起始文章 */
+          { text: "JWT:令牌传输", link: "/microservice/auth/JWT核心原理.md" },              /** 指向JWT:令牌传输起始文章 */  
+          { text: "OSS单点登录", link: "/microservice/auth/SpringSecurity实现OOS.md" },              /** 指向OSS单点登录起始文章 */       
         ]
       },
 

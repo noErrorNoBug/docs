@@ -4,17 +4,19 @@ prev:
   text: SpringSecurity核心原理
   link: /microservice/auth/SpringSecurity核心原理.md
 next:
-  text: Oauth2核心原理
-  link: /microservice/auth/Oauth2核心原理.md
+  text: Oauth2协议详解
+  link: /microservice/auth/Oauth2协议详解.md
 ---
-::: info
+::: info 认证和授权
 &#8195;&#8195;SpringSecurity主要解决的事**认证和授权**的问题。认证解决的是"我是谁"的问题，授权解决的是"我能做什么"的问题。
+
 &#8195;&#8195;在Spring Security的底层机制中，是通过**Filter和FilterChain**来实现认证和授权的，Filter和客户端的交互则是通过请求/响应中的字段完成的。
 :::
 [[toc]]
 ***
 ## 过滤器链执行原理
 &#8195;&#8195;过滤器和过滤器链是SpringSecurity实现认证和授权的核心。其认证和授权的功能就是在多个过滤器的执行下完成的，数据则是通过请求/响应中的字段进行交互。
+
 &#8195;&#8195;Spring Security的Filter在Http请求到达Controller之前，过滤每一个想要传入的Http请求，如下图所示：
 
 ![Filter原理](/images/microservice/auth/Filter原理.png)
@@ -102,6 +104,7 @@ public String hello(@PathVariable("name") String name) {
 ```
 ### 自定义权限处理方法
 &#8195;&#8195;上面介绍了使用SpringSecurity提供的四个方法hasAuthority、hasAnyAuthority、hasRole、hasAnyRole来进行权限校验，很多时候我们的权限校验是需要自己的逻辑，或者是需要通过第三方完成的，这时候我们需要自己实现一个权限校验的方法，并且集成到SpringSecurity中的。
+
 &#8195;&#8195;要实现自己的权限校验方法非常的简单，只需要将自己的实现注入到Spring容器中(最好自己指定名称)，然后调用即可：
 ```java
 /**
@@ -230,6 +233,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 ```
 #### 关于CSRF的一点说明
 &#8195;&#8195;CSRF指的是跨域请求伪造，是web常见的攻击手段之一，SpringSecurity去防止CSRF攻击的方式就是通过csrf_token。后端会生成一个csrf_token，前端发起请求的时候需要携带这个csrf_token,后端会有过滤器进行校验，如果没有携带或者是伪造的就不允许访问。
+
 &#8195;&#8195;CSRF攻击是依靠token中携带一个认证信息进行攻击的，但是我**们大多数场景下都是使用token进行认证，而且token都是让其写在请求头中的**，因此这里可以不用担心。
 
 ### Session配置
@@ -289,6 +293,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
 ### 全局异常处理器
 &#8195;&#8195;对于认证失败和授权失败，我们一般会对返回值做一些处理，或者添加其他逻辑如通知、审计日志等等，此时我们就需要对失败后的逻辑进行处理。
+
 &#8195;&#8195;对于**认证失败**，可以通过实现AuthenticationEntryPoint接口的commence()方法，并且将实现注入到SpringSecurity配置中实现。下面是实现类，这里仅仅是封装为自定义的返回值：
 ```java
 @Component
@@ -425,6 +430,7 @@ public PasswordEncoder passwordEncoder() {
 ```
 ### 获取认证/权限处理器
 &#8195;&#8195;有时候我们在自己实现认证逻辑时，可能需要自己调用AuthenticationManager的认证方法来执行认证流程，此时我们就需要获取到认证管理器。
+
 &#8195;&#8195;获取认证管理器只需要重写WebSecurityConfigurerAdapter的authenticationManagerBean()方法，并且调用父类的方法获取到Manager，注入到Spring容器中即可，之后我们就可以在需要的地方通过@Autowire获取到AuthenticationManager。
 ```java
 @Configuration
@@ -446,6 +452,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 ```
 ### 自定义过滤器加入过滤器链
 &#8195;&#8195;一般情况下我们是不使用SpringSecurity的原生认证和鉴权的逻辑的，比如我们需要把用户名、密码、角色等信息存储到数据库中，同时对于登录的用户需要存储用户信息和权限到nosql数据库中，还需要解析token等操作。尤其是使用token进行验证的授权模式，需要在用户名和密码验证之前首先验证是否持有token，此时我们需要在UsernamePasswordAuthenticationFilter前加一个过滤器，验证token，下面我们以此为例，说明一下如何将自定义的过滤器添加到过滤器链中。
+
 &#8195;&#8195;首先，可以通过**继承OncePerRequestFilter，并且实现doFilterInternal方法来**实现过滤器的逻辑，**过滤器需要注入到Spring容器中**，下面是实现了通过token解析用户状态的过滤：
 ```java
 @Component

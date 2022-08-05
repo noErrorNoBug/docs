@@ -447,10 +447,10 @@ export default defineNavbarConfig([
       },
 
       /**
-       * [系统架构案例] 导航栏
+       * [系统设计案例] 导航栏
        */
       {
-        text: "系统架构案例", children: [
+        text: "系统设计案例", children: [
           { text: "秒杀系统案例", link: "/guide.md" },          /** 指向全局唯一ID起始文章 */
           { text: "后台管理系统案例", link: "/guide.md" },            /** 指向后台管理系统起始文章 */
           { text: "数据同步案例", link: "/guide.md" },           /** 指向数据同步案例起始文章 */
@@ -497,10 +497,17 @@ export default defineNavbarConfig([
        * [容错限流降级] 导航栏
        */
       {
-        text: "容错限流降级", children: [
-          { text: "Gateway:高可用网关API", link: "/microservice/gateway/Gateway核心原理.md" },          /** 指向Gateway:高可用网关API起始文章 */
+        text: "容错限流|服务降级", children: [
           { text: "Sentinel:限流和降级", link: "/guide.md" },          /** 指向Sentinel:限流和降级起始文章 */
-          { text: "Dubbo:RPC调用", link: "/guide.md" },          /** 指向Dubbo:RPC调用起始文章 */
+        ]
+      },
+
+      /**
+       * [容错限流降级] 导航栏
+       */
+       {
+        text: "高可用网关API", children: [
+          { text: "Gateway:高可用网关API", link: "/microservice/gateway/Gateway核心原理.md" },          /** 指向Gateway:高可用网关API起始文章 */
         ]
       },
 

@@ -1,13 +1,13 @@
 ---
 title: Gateway核心原理
 prev:
-  text: Java基础知识
-  link: /java/basic/Java基础知识.md
+  text: Gateway核心原理
+  link: /microservice/gateway/Gateway核心原理.md
 next:
-  text: 断言工厂和路由匹配
-  link: /microservice/gateway/断言工厂和路由匹配.md
+  text: Gateway集成Nacos实现负载均衡和动态配置
+  link: /microservice/gateway/Gateway集成Nacos实现负载均衡和动态配置.md
 ---
-::: info
+::: info 概述
 &#8195;&#8195;Gateway是由WebFlux、Netty、Reactor实现的响应式API网关。其作用不仅是一个请求的转发以及服务的整合，还可以提供下述功能：
 - 统一鉴权、限流、熔断、日志。
 - 协议转化。针对后端的多种协议(如REST、DUBBO协议)，在网关层统一处理以HTTP协议对外提供的服务后，针对后端的服务进行协议转换。
@@ -27,6 +27,7 @@ next:
 ![Gateway请求处理过程](/images/microservice/gateway/Gateway请求处理过程.png)
 
 &#8195;&#8195;Gateway启动时，基于Netty Server监听一个指定的端口(通过server.port指定)。当客户端发送一个请求到达网关时，网关根据一系列的Predicate的匹配，确定该访问哪个路由，然后根据过滤器链进行请求的处理。
+
 &#8195;&#8195;Gateway只包含pre和post过滤器，即先执行pre过滤器链，然后转发到对应服务器，最后执行post过滤器链。
 
 ## 快速开始
@@ -148,6 +149,7 @@ spring:
 
 ### 自定义断言工厂
 &#8195;&#8195;自定义断言工厂需要需要继承AbstractRoutePredicateFactory类，重写apply()方法。在方法中可以通过exchange.getRequest()获得ServerHttpRequest对象，从而获得请求相关信息。断言工厂需要被注入到容器中，因此需要@Service进行装配。注意：自定义断言工厂命名需要以RoutePredicateFactory结尾。
+
 ```java
 @Slf4j
 @Service
@@ -191,6 +193,7 @@ public class CheckAuthRoutePredicateFactory extends AbstractRoutePredicateFactor
     }
 }
 ```
+
 &#8195;&#8195;yml配置文件中使用自定义断言工厂：
 ```yml
 spring:
@@ -320,7 +323,9 @@ spring:
 
 ## 自定义过滤器(Gateway Filter Factories)
 &#8195;&#8195;自定义过滤器也分为GatewayFilter和GlobalFiler两种，其作用域与内置过滤器相同，GatewayFilter只对声明的Route有效，GlobalFilter全局有效。
+
 ### GatewayFilter
+
 1. 继承AbstractGatewayFilterFactory
    - 命名必须以GatewayFilterFactory结尾，默认会截取前缀
 2. 实现apply()方法
@@ -367,6 +372,7 @@ class GpConfig {
     }
 }
 ```
+
 &#8195;&#8195;配置文件如下：
 ```yml 
 spring:
@@ -387,7 +393,9 @@ spring:
 ```
 
 ### GlobalFilter
+
 &#8195;&#8195;全局过滤器只需要实现GlobalFilter，不需要其他额外配置。注意：需要实现Ordered或者使用@Order来实现过滤器的执行顺序。
+
 ```java
 @Slf4j
 @Service
@@ -412,7 +420,9 @@ public class GpDefineFilter implements GlobalFilter, Ordered {
 ```
 
 ## 跨域配置
+
 &#8195;&#8195;跨域在项目中一半是由前端进行统一配置，或者Nginx中进行配置，但是很多情况下后端服务也必须要有一定的托底(实际开发中不应该将信任交由其他服务)，Gateway提供了通过配置进行设置跨域访问的机制，如下是一个全部开放跨域的配置示例：
+
 ```yml
 spring:
   cloud:
@@ -428,6 +438,7 @@ spring:
               - PUT
               - OPTION
 ```
+
 &#8195;&#8195;当然，依旧可以使用Java配置的方式进行跨域的配置，Gateway使用的是WebFlux，因此只需要配置WebFlux CROS Handling即可。
 ```java
 @Configuration
@@ -445,7 +456,9 @@ public class CrosConfig {
 }
 ```
 ## 网关高可用方案
+
 &#8195;&#8195;网关一般是在整个调用链路的最前方，同时也是流量最集中的地方。Gateway采用Netty、Reactor、WebFlux来处理流量集中的问题，但是仍需要进行高可用保证以保证整个系统的可靠性。
+
 &#8195;&#8195;Gateway的高可用可以采用多个实例进行负载，然后使用Nginx或者F5进行反向代理和负载均衡即可。
 
 

@@ -68,11 +68,12 @@ OAuth 2.0的运行流程如下图，摘自RFC 6749：
 :::
 
 ## 客户端授权模式
-&#8195;&#8195;OAuth 2.0 对于如何颁发令牌的细节，规定得非常详细。具体来说，一共分成四种授权类型(authorization grant)，即四种颁发令牌的方式，适用于不同的互联网场景。
+&#8195;&#8195;OAuth 2.0 对于如何颁发令牌的细节，规定得非常详细。具体来说，一共分成四种授权类型(authorization grant)，即五种颁发令牌的方式，适用于不同的互联网场景。
 - 授权码模式(authorization code)
 - 密码模式(resource owner password credentials)
 - 简化(隐式)模式(implicit)
 - 客户端模式(client credentials)
+- 刷新授权(refresh token)
 
 
 &#8195;&#8195;**不管哪一种授权方式，第三方应用申请令牌之前，都必须先到系统备案，说明自己的身份，然后会拿到两个身份识别码:客户端 ID(client ID)和客户端密钥(client secret)**。
@@ -175,7 +176,7 @@ https://b.com/oauth/token? 2 >client_id=CLIENT_ID&client_secret=CLIENT_SECRET&gr
 2. 授权服务器确认无误后，向客户端提供访问令牌。
 :::
 
-### 令牌使用和更新
+### 刷新授权
 &#8195;&#8195;客户端拿到令牌后，就可以向资源服务器请求资源了。**此时每个向资源服务器发送的API请求**，都必须携带令牌。具体做法是，**在请求头中加入一个Authentication字段，令牌就放在这个字段里，或者通过access_token字段的参数进行请求**。
 
 &#8195;&#8195;令牌如果到期后，使用上述的授权过程再次请求的话，体验非常不好，因此Oauth2允许更新令牌，具体的做法是，办法令牌时一次性办法两个令牌，即上文中提到的access_token作为请求正常使用的令牌，refresh_token作为更新令牌。令牌到期前，用户使用refresh_token发送一个请求进行令牌更新。

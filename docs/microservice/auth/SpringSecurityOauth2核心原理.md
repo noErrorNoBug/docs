@@ -9,7 +9,10 @@ next:
 ---
 ::: info
 &#8195;&#8195;[SpringSecurity](SpringSecurity%E6%A0%B8%E5%BF%83%E5%8E%9F%E7%90%86.md)是一个能够为基于Spring的企业应用系统提供声明式的安全访问控制解决方案的安全框架。SpringSecurity主要实现了认证和授权的功能。
+
 &#8195;&#8195;把Spring Security和Oauth2进行集成，就可以实现一套完整的安全解决方案。即通过Spring Security Oauth2 构建一个授权服务器验证access_token，并且通过这个access_token获取请求资源。
+
+&#8195;&#8195;Spring Security Oauth项目已经停止更新，新的Oauth2和Oauth2.1被集成在了SpringSecurity5.7.x以上版本的项目中，也可以使用Spring Cloud Security集成的项目，其核心原理是一样的。
 :::
 [[toc]]
 ***

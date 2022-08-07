@@ -361,6 +361,53 @@ export default defineNavbarConfig([
     ]
   },
 
+    /**
+   * [微服务]模块 导航栏
+   */
+     {
+      text: "微服务",
+      children: [
+        
+  
+        /**
+         * [Spring Cloud 组件] 导航栏
+         */
+         {
+          text: "Spring Cloud 生态", children: [
+            { text: "LoadBalancer:负载均衡器", link: "/microservice/loadbalance/LoadBalancer核心原理.md" },          /** 指向LoadBalancer:负载均衡器起始文章 */
+            { text: "OpenFeign:函数式调用", link: "/microservice/feign/OpenFeign架构原理.md" },          /** 指向OpenFeign:函数式调用起始文章 */
+            { text: "Gateway:高可用网关API", link: "/microservice/gateway/Gateway核心原理.md" },          /** 指向Gateway:高可用网关API起始文章 */
+            { text: "SkyWalking:服务调用链", link: "/guide.md" },          /** 指向SkyWalking:服务调用链起始文章 */
+            { text: "SpringCloud扩展点", link: "/guide.md" },          /** 指向SpringCloud扩展点起始文章 */
+          ]
+        },
+  
+        /**
+         * [Spring Cloud Alibaba 生态] 导航栏
+         */
+         {
+          text: "Spring Cloud Alibaba 生态", children: [
+            { text: "Nacos:服务注册与发现", link: "/microservice/register/基于AP架构下的Nacos服务注册和服务发现原理.md" },          /** 指向服务注册与发现起始文章 */
+            { text: "Nacos:配置中心", link: "/microservice/config/基于Nacos的配置中心实现.md" },          /** 指向配置中心起始文章 */
+            { text: "Sentinel:限流和降级", link: "/guide.md" },          /** 指向Sentinel:限流和降级起始文章 */
+            { text: "RocketMQ:最终一致性事务解决方案", link: "/guide.md" },          /** 指向RocketMQ:RocketMQ:最终一致性事务解决方案起始文章 */
+            { text: "Seata:强一致性事务实现", link: "/guide.md" },          /** 指向Seata:强一致性事务实现起始文章 */
+          ]
+        },
+  
+        /**
+         * [安全和认证] 导航栏
+         */
+         {
+          text: "安全和认证", children: [
+            { text: "Spring Security", link: "/microservice/auth/SpringSecurity核心原理.md" },          /** 指向SpringSecurity:服务安全起始文章 */
+            { text: "Oauth2:开放授权", link: "/microservice/auth/Oauth2核心原理.md" },          /** 指向Oauth2:开放授权起始文章 */
+            { text: "JWT:令牌传输", link: "/microservice/auth/JWT核心原理.md" },              /** 指向JWT:令牌传输起始文章 */  
+            { text: "OSS单点登录", link: "/microservice/auth/SpringSecurity实现OOS.md" },              /** 指向OSS单点登录起始文章 */       
+          ]
+        },
+      ]
+    },
 
   /**
    * [方法论|系统设计]模块 导航栏
@@ -466,93 +513,7 @@ export default defineNavbarConfig([
   },
 
 
-  /**
-   * [微服务]模块 导航栏
-   */
-  {
-    text: "微服务",
-    children: [
-      /**
-       * [注册中心|配置中心] 导航栏
-       */
-      {
-        text: "注册中心|配置中心", children: [
-          { text: "Nacos:服务注册与发现", link: "/guide.md" },          /** 指向服务注册与发现起始文章 */
-          { text: "Nacos:配置中心", link: "/guide.md" },          /** 指向配置中心起始文章 */
-        ]
-      },
 
-      /**
-       * [负载均衡|远程调用] 导航栏
-       */
-      {
-        text: "负载均衡|远程调用", children: [
-          { text: "LoadBalancer:负载均衡器", link: "/guide.md" },          /** 指向LoadBalancer:负载均衡器起始文章 */
-          { text: "OpenFeign:函数式调用", link: "/guide.md" },          /** 指向OpenFeign:函数式调用起始文章 */
-          { text: "Dubbo:RPC调用", link: "/guide.md" },          /** 指向Dubbo:RPC调用起始文章 */
-        ]
-      },
-
-      /**
-       * [容错限流降级] 导航栏
-       */
-      {
-        text: "容错限流|服务降级", children: [
-          { text: "Sentinel:限流和降级", link: "/guide.md" },          /** 指向Sentinel:限流和降级起始文章 */
-        ]
-      },
-
-      /**
-       * [容错限流降级] 导航栏
-       */
-       {
-        text: "高可用网关API", children: [
-          { text: "Gateway:高可用网关API", link: "/microservice/gateway/Gateway核心原理.md" },          /** 指向Gateway:高可用网关API起始文章 */
-        ]
-      },
-
-      /**
-       * [事务解决方案] 导航栏
-       */
-      {
-        text: "事务解决方案", children: [
-          { text: "分布式事务解决方案", link: "/guide.md" },          /** 指向分布式事务解决方案起始文章 */
-          { text: "RocketMQ:最终一致性事务解决方案", link: "/guide.md" },          /** 指向RocketMQ:RocketMQ:最终一致性事务解决方案起始文章 */
-          { text: "Seata:强一致性事务实现", link: "/guide.md" },          /** 指向Seata:强一致性事务实现起始文章 */
-        ]
-      },
-
-      /**
-       * [安全和认证] 导航栏
-       */
-      {
-        text: "认证授权", children: [
-          { text: "Spring Security", link: "/microservice/auth/SpringSecurity核心原理.md" },          /** 指向SpringSecurity:服务安全起始文章 */
-          { text: "Oauth2:开放授权", link: "/microservice/auth/Oauth2核心原理.md" },          /** 指向Oauth2:开放授权起始文章 */
-          { text: "JWT:令牌传输", link: "/microservice/auth/JWT核心原理.md" },              /** 指向JWT:令牌传输起始文章 */  
-          { text: "OSS单点登录", link: "/microservice/auth/SpringSecurity实现OOS.md" },              /** 指向OSS单点登录起始文章 */       
-        ]
-      },
-
-      /**
-       * [链路追踪] 导航栏
-       */
-      {
-        text: "链路追踪", children: [
-          { text: "SkyWalking:服务调用链", link: "/guide.md" },          /** 指向SkyWalking:服务调用链起始文章 */
-        ]
-      },
-
-      /**
-       * [SpringCloud扩展点] 导航栏
-       */
-      {
-        text: "SpringCloud扩展点", children: [
-          { text: "SpringCloud扩展点", link: "/guide.md" },          /** 指向SpringCloud扩展点起始文章 */
-        ]
-      },
-    ]
-  },
 
 
   /**
@@ -611,17 +572,16 @@ export default defineNavbarConfig([
        */
       {
         text: "项目重构|项目设计", children: [
+          { text: "一套分布式高可用架构选型", link: "/guide.md" },
           { text: "商城系统", link: "/guide.md" },
           { text: "秒杀系统", link: "/guide.md" },
-          { text: "后台管理系统", link: "/guide.md" },
+          { text: "认证授权系统", link: "/projects/uua/UUA认证中心实现案例.md" },
+          { text: "日志中心系统", link: "/guide.md" },
           { text: "基于数据库的订阅中心", link: "/guide.md" },
+          { text: "高可用网关方案", link: "/guide.md" },
           { text: "单机可插拔限流框架", link: "/guide.md" },
-          { text: "高可用网关", link: "/guide.md" },
-          { text: "认证授权系统", link: "/guide.md" },
-          { text: "OSS单点登录系统", link: "/guide.md" },
-          // { text: "电商数仓系统设计", link: "/guide.md" },
-          // { text: "推荐系统设计", link: "/guide.md" },
-          // { text: "客户画像系统设计", link: "/guide.md" },
+          { text: "幂等性框架", link: "/guide.md" },
+          { text: "基于Flink的实时推荐系统", link: "/guide.md" },
         ]
       },
     ]

@@ -34,7 +34,7 @@ export default defineSidebarConfig({
       collapsable: false,  
       prefix: "collection/",
       children: [
-        "标题占位.md",
+        "todo.md",
       ],
     },
     /*
@@ -45,7 +45,16 @@ export default defineSidebarConfig({
       collapsable: false,  
       prefix: "concurrence/",
       children: [
-        "标题占位.md",
+        "内存模型.md",
+        "并发流程控制.md",
+        "CAS和原子类.md",
+        "synchronized关键字.md",
+        "锁.md",
+        "线程池.md",
+        "AQS原理.md",
+        "final和不变性.md",
+        "Future和Callable.md",
+        "ThreadLocal.md",
       ],
     },
     /*
@@ -56,7 +65,7 @@ export default defineSidebarConfig({
       collapsable: false,
       prefix: "io/",
       children: [
-        "标题占位.md",
+        "todo.md",
       ],
     },
     /**
@@ -143,7 +152,12 @@ export default defineSidebarConfig({
       collapsable: false,
       prefix: "mysql/",
       children: [
-        "标题占位.md", 
+        "sql执行过程.md", 
+        "索引原理.md", 
+        "索引分析和优化.md", 
+        "隔离级别和锁机制.md", 
+        "MVCC和BufferPool缓存机制.md", 
+        "主从架构和分库分表.md", 
       ],
     },
     /**
@@ -154,7 +168,24 @@ export default defineSidebarConfig({
       collapsable: false,
       prefix: "redis/",
       children: [
-        "标题占位.md", 
+        "数据类型和命令.md", 
+        "底层数据结构实现.md", 
+        "高性能IO模型.md", 
+        "数据持久化原理.md", 
+        "主从模式和数据同步原理.md", 
+        "哨兵集群原理.md", 
+        "分片集群原理.md", 
+        "单线程阻塞点及优化方案.md", 
+        "基于CPU结构优化.md", 
+        "Redis变慢优化思路.md", 
+        "内存碎片优化.md", 
+        "缓冲区优化.md", 
+        "旁路缓存应用.md", 
+        "淘汰策略选择.md", 
+        "异常情况处理.md", 
+        "分布式锁实现.md", 
+        "秒杀场景应用.md", 
+        "Lua脚本和集成框架.md", 
       ],
     },
     /**
@@ -165,7 +196,16 @@ export default defineSidebarConfig({
       collapsable: false,
       prefix: "es/",
       children: [
-        "标题占位.md", 
+        "基本操作和命令.md", 
+        "复杂搜索策略.md", 
+        "聚合匹配.md", 
+        "数据建模.md", 
+        "核心原理.md", 
+        "优化思路.md", 
+        "ElasticSeach集群架构方案.md", 
+        "集群监控工具ElasticView.md", 
+        "Kinaba部署安装.md", 
+        "面试题.md", 
       ],
     },
   ],
@@ -182,7 +222,8 @@ export default defineSidebarConfig({
       collapsable: false,
       prefix: "nginx/",
       children: [
-        "标题占位.md", 
+        "原理及配置.md", 
+        "性能调优.md", 
       ],
     },
 
@@ -194,7 +235,10 @@ export default defineSidebarConfig({
       collapsable: false,
       prefix: "tomcat/",
       children: [
-        "标题占位.md", 
+        "Web请求过程.md", 
+        "架构原理和启停原理.md", 
+        "热加载和热部署.md", 
+        "网络IO模型和Connector原理.md", 
       ],
     },
 
@@ -206,7 +250,10 @@ export default defineSidebarConfig({
       collapsable: false,
       prefix: "netty/",
       children: [
-        "标题占位.md", 
+        "NIO和Epoll.md", 
+        "Netty核心原理.md", 
+        "线程模型源码.md", 
+        "数据交换源码.md", 
       ],
     },
   ],
@@ -223,7 +270,13 @@ export default defineSidebarConfig({
       collapsable: false,
       prefix: "kafka/",
       children: [
-        "标题占位.md", 
+        "Broker原理.md", 
+        "Producer原理.md", 
+        "Consumer原理.md", 
+        "常见问题及解决方案.md", 
+        "Kafka调优思路.md", 
+        "如何有效的对Kafka进行资源规划.md", 
+        "Kafka面试题.md", 
       ],
     },
 
@@ -235,7 +288,24 @@ export default defineSidebarConfig({
       collapsable: false,
       prefix: "rabbitmq/",
       children: [
-        "标题占位.md", 
+        "高可用集群搭建.md", 
+        "集群原理.md", 
+        "消息模型.md", 
+        "高级特性.md", 
+        "与SpringBoot集成.md", 
+        "解决方案总结.md", 
+      ],
+    },
+
+    /**
+     * [RocketMQ]模块 侧边栏
+     */
+     {
+      text: "RocketMQ",
+      collapsable: false,
+      prefix: "rocketmq/",
+      children: [
+        "todo.md", 
       ],
     },
   ],
@@ -254,7 +324,19 @@ export default defineSidebarConfig({
       collapsable: false,
       prefix: "patterns/",
       children: [
-        "标题占位.md", 
+        "单例模式.md", 
+        "工厂模式.md", 
+        "建造者模式.md", 
+        "代理模式.md", 
+        "桥接模式.md", 
+        "装饰器模式.md", 
+        "适配器模式.md", 
+        "思考-代理模式、装饰器模式、适配器模式、桥接模式的异同.md", 
+        "门面模式.md", 
+        "观察者模式.md", 
+        "模板模式.md", 
+        "策略模式.md", 
+        "原型模式.md", 
       ],
     },
 
@@ -266,7 +348,13 @@ export default defineSidebarConfig({
       collapsable: false,
       prefix: "distribution/",
       children: [
-        "标题占位.md", 
+        "CAP定理和BASE理论.md", 
+        "X_OPEN事务模型.md", 
+        "2PC事务模型.md", 
+        "3PC事务模型.md", 
+        "TCC事务补偿方案.md", 
+        "基于可靠消息的最终一致性方案.md", 
+        "最大努力通知型事务方案.md", 
       ],
     },
   ],
@@ -277,26 +365,91 @@ export default defineSidebarConfig({
    */
   "/microservice/": [
     /**
-     * [注册中心|配置中心]模块 侧边栏
+     * [LoadBalancer负载均衡]模块 侧边栏
      */
-    {
-      text: "注册中心|配置中心",
+     {
+      text: "LoadBalance负载均衡",
       collapsable: false,
-      prefix: "register/",
+      prefix: "loadbanalce/",
       children: [
-        "标题占位.md", 
+        "LoadBalancer核心原理.md",
+        "LoadBalancer负载均衡策略.md", 
+        "LoadBalancer功能扩展.md", 
       ],
     },
 
     /**
-     * [负载均衡|RPC调用]模块 侧边栏
+     * [OpenFeign函数式调用]模块 侧边栏
      */
-    {
-      text: "负载均衡|RPC调用",
+     {
+      text: "OpenFeign函数式调用",
       collapsable: false,
-      prefix: "loadbalance/",
+      prefix: "feign/",
       children: [
-        "标题占位.md", 
+        "OpenFeign架构原理.md",
+        "OpenFeign生命周期.md", 
+        "OpenFeign核心组件源码.md", 
+        "OpenFeign扩展配置.md", 
+      ],
+    },
+
+    /**
+     * [Gateway高可用网关API]模块 侧边栏
+     */
+     {
+      text: "Gateway高可用网关API",
+      collapsable: false,
+      prefix: "gateway/",
+      children: [
+        "Gateway核心原理.md",
+        "Gateway集成Nacos实现负载均衡和动态配置.md", 
+        "Gateway集成Sentinel实现网关限流.md", 
+        "Gateway集成Swagger3实现统一接口文档.md", 
+        "Gateway集成监控系统.md", 
+        "Gateway源码解析.md", 
+      ],
+    },
+
+    /**
+     * [Nacos注册中心]模块 侧边栏
+     */
+     {
+      text: "Nacos注册中心",
+      collapsable: false,
+      prefix: "register/",
+      children: [
+        "基于AP架构下的Nacos服务注册和服务发现原理.md",
+        "基于CP架构下的Nacos服务注册和服务发现原理.md", 
+        "基于Nacos的注册中心扩展.md", 
+      ],
+    },
+
+    /**
+     * [Nacos配置中心]模块 侧边栏
+     */
+     {
+      text: "Nacos配置中心",
+      collapsable: false,
+      prefix: "config/",
+      children: [
+        "基于Nacos的配置中心实现.md",
+        "Nacos配置中心源码解析.md", 
+      ],
+    },
+
+    /**
+     * [安全|认证]模块 侧边栏
+     */
+     {
+      text: "安全|认证",
+      collapsable: false,
+      prefix: "auth/",
+      children: [
+        "SpringSecurity核心原理.md",
+        "Oauth2协议详解.md", 
+        "SpringSecurityOauth2核心原理.md", 
+        "JWT核心原理.md", 
+        "SpringSecurity实现OOS.md", 
       ],
     },
   ],
@@ -319,6 +472,30 @@ export default defineSidebarConfig({
         "文本操作命令.md",
         "系统操作命令.md",
         "系统管理命令.md",
+      ],
+    },
+
+    /**
+     * [网络协议]模块 侧边栏
+     */
+     {
+      text: "网络协议",
+      collapsable: false,
+      prefix: "network/",
+      children: [
+        "消息格式及语义.md",
+        "WebSocket协议格式.md",
+        "Http1_1连接过程.md",
+        "HTTP协议升级WebSocket.md",
+        "传递消息时的编码格式.md",
+        "start-line起始行.md",
+        "会话心跳保持.md",
+        "Header-filed头部字段.md",
+        "关闭会话.md",
+        "Http包体传输.md",
+        "Cookie和Session.md",
+        "缓存.md",
+        "其他语义.md",
       ],
     },
   ],

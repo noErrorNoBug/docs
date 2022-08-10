@@ -1,11 +1,11 @@
 ---
-title: title
+title: 基于Nacos的注册中心扩展
 prev:
-  text: 回到首页
-  link: /README.md
+  text: 基于CP架构下的Nacos服务注册和服务发现原理
+  link: /microservice/register/基于CP架构下的Nacos服务注册和服务发现原理.md
 next:
-  text: 回到首页
-  link: /README.md
+  text: 基于Nacos的配置中心实现
+  link: /microservice/config/基于Nacos的配置中心实现.md
 ---
 ::: info
 文章介绍
@@ -13,7 +13,7 @@ next:
 [[toc]]
 
 ***
-# Client配置项
+## Client配置项
 
 ```java
 spring:

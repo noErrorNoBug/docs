@@ -1,11 +1,11 @@
 ---
-title: title
+title: OpenFeign核心组件源码
 prev:
-  text: 回到首页
-  link: /README.md
+  text: OpenFeign生命周期
+  link: /microservice/feign/OpenFeign生命周期.md
 next:
-  text: 回到首页
-  link: /README.md
+  text: OpenFeign扩展配置
+  link: /microservice/feign/OpenFeign扩展配置.md
 ---
 ::: info
 文章介绍

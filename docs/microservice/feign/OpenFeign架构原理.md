@@ -1,11 +1,11 @@
 ---
-title: title
+title: OpenFeign架构原理
 prev:
-  text: 回到首页
-  link: /README.md
+  text: LoadBalancer功能扩展
+  link: /microservice/loadbalance/LoadBalancer功能扩展.md
 next:
-  text: 回到首页
-  link: /README.md
+  text: OpenFeign生命周期
+  link: /microservice/feign/OpenFeign生命周期.md
 ---
 ::: info
 文章介绍

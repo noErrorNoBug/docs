@@ -1,11 +1,11 @@
 ---
-title: title
+title: OpenFeign扩展配置
 prev:
-  text: 回到首页
-  link: /README.md
+  text: OpenFeign核心组件源码
+  link: /microservice/feign/OpenFeign核心组件源码.md
 next:
-  text: 回到首页
-  link: /README.md
+  text: Gateway核心原理
+  link: /microservice/gateway/Gateway核心原理.md
 ---
 ::: info
 文章介绍

@@ -4,8 +4,8 @@ prev:
   text: JWT核心原理
   link: /microservice/auth/JWT核心原理.md
 next:
-  text: SpringSecurity实现OOS
-  link: /microservice/auth/SpringSecurity实现OOS.md
+  text: Skywalking文章衔接
+  link: docs/microservice/skywalking/todo.md
 ---
 ::: info 单点登录介绍
 &#8195;&#8195;目前每家企业或者平台都存在不止一套系统，由于历史原因每套系统采购于不同厂商，所以系统间都是相互独立的，都有自己的用户鉴权认证体系，当用户进行登录系统时，不得不记住每套系统的用户名密码，同时，管理员也需要为同一个用户设置多套系统登录账号，这对系统的使用者来说显然是不方便的。我们期望的是如果存在多个系统，只需要登录一次就可以访问多个系统，只需要在其中一个系统执行注销登录操作，则所有的系统都注销登录，无需重复操作，这就是单点登录(Single Sign On 简称SSO)系统实现的功能。

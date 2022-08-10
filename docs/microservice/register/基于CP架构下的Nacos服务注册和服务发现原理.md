@@ -1,11 +1,11 @@
 ---
-title: title
+title: 基于CP架构下的Nacos服务注册和服务发现原理
 prev:
-  text: 回到首页
-  link: /README.md
+  text: 基于AP架构下的Nacos服务注册和服务发现原理
+  link: /microservice/register/基于AP架构下的Nacos服务注册和服务发现原理.md
 next:
-  text: 回到首页
-  link: /README.md
+  text: 基于Nacos的注册中心扩展
+  link: /microservice/register/基于Nacos的注册中心扩展.md
 ---
 ::: info
 文章介绍

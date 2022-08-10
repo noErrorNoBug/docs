@@ -1,11 +1,11 @@
 ---
-title: title
+title: LoadBalancer功能扩展
 prev:
-  text: 回到首页
-  link: /README.md
+  text: LoadBalancer负载均衡策略
+  link: /microservice/loadbalance/LoadBalancer负载均衡策略.md
 next:
-  text: 回到首页
-  link: /README.md
+  text: OpenFeign架构原理
+  link: /microservice/feign/OpenFeign架构原理.md
 ---
 ::: info
 文章介绍
@@ -19,6 +19,5 @@ next:
 
 # 实现请求与请求之间隔离的负载均衡算法
 
-## 
 
 

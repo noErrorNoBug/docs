@@ -1,8 +1,11 @@
 ---
 title: 基于Nacos的配置中心实现
+prev:
+  text: 基于Nacos的注册中心扩展
+  link: /microservice/register/基于Nacos的注册中心扩展.md
 next:
-  text: Java注解机制
-  link: /java/basic/Java注解机制.md
+  text: Nacos配置中心源码解析
+  link: /microservice/config/Nacos配置中心源码解析.md
 ---
 ::: info
 &#8195;&#8195;开源配置中心的方案有很多，比如Zookeeper、Spring Cloud Config等。无论哪种方案，其核心原理和目的都是一样的。Nacos通过Config Service实现了对配置的CURD、版本管理、灰度管理、监听管理、推送轨迹、聚合数据等功能。

@@ -333,7 +333,7 @@ export default defineNavbarConfig([
        */
       {
         text: "RocketMQ", children: [
-          { text: "TODO", link: "/guide.md" },                  /** 指向Netty优化起始文章 */
+          { text: "TODO", link: "/guide.md" },                  /** 指向RocketMQ起始文章 */
         ]
       },
 
@@ -368,7 +368,6 @@ export default defineNavbarConfig([
       text: "微服务",
       children: [
         
-  
         /**
          * [Spring Cloud 组件] 导航栏
          */
@@ -377,7 +376,8 @@ export default defineNavbarConfig([
             { text: "LoadBalancer:负载均衡器", link: "/microservice/loadbalance/LoadBalancer核心原理.md" },          /** 指向LoadBalancer:负载均衡器起始文章 */
             { text: "OpenFeign:函数式调用", link: "/microservice/feign/OpenFeign架构原理.md" },          /** 指向OpenFeign:函数式调用起始文章 */
             { text: "Gateway:高可用网关API", link: "/microservice/gateway/Gateway核心原理.md" },          /** 指向Gateway:高可用网关API起始文章 */
-            { text: "SkyWalking:服务调用链", link: "/guide.md" },          /** 指向SkyWalking:服务调用链起始文章 */
+            { text: "Security:认证和授权", link: "/microservice/auth/SpringSecurity核心原理.md" },          /** Security:认证和授权 */
+            { text: "SkyWalking:链路追踪", link: "/guide.md" },          /** 指向SkyWalking:服务调用链起始文章 */
             { text: "SpringCloud扩展点", link: "/guide.md" },          /** 指向SpringCloud扩展点起始文章 */
           ]
         },
@@ -390,20 +390,7 @@ export default defineNavbarConfig([
             { text: "Nacos:服务注册与发现", link: "/microservice/register/基于AP架构下的Nacos服务注册和服务发现原理.md" },          /** 指向服务注册与发现起始文章 */
             { text: "Nacos:配置中心", link: "/microservice/config/基于Nacos的配置中心实现.md" },          /** 指向配置中心起始文章 */
             { text: "Sentinel:限流和降级", link: "/guide.md" },          /** 指向Sentinel:限流和降级起始文章 */
-            { text: "RocketMQ:最终一致性事务解决方案", link: "/guide.md" },          /** 指向RocketMQ:RocketMQ:最终一致性事务解决方案起始文章 */
-            { text: "Seata:强一致性事务实现", link: "/guide.md" },          /** 指向Seata:强一致性事务实现起始文章 */
-          ]
-        },
-  
-        /**
-         * [安全和认证] 导航栏
-         */
-         {
-          text: "安全和认证", children: [
-            { text: "Spring Security", link: "/microservice/auth/SpringSecurity核心原理.md" },          /** 指向SpringSecurity:服务安全起始文章 */
-            { text: "Oauth2:开放授权", link: "/microservice/auth/Oauth2核心原理.md" },          /** 指向Oauth2:开放授权起始文章 */
-            { text: "JWT:令牌传输", link: "/microservice/auth/JWT核心原理.md" },              /** 指向JWT:令牌传输起始文章 */  
-            { text: "OSS单点登录", link: "/microservice/auth/SpringSecurity实现OOS.md" },              /** 指向OSS单点登录起始文章 */       
+            { text: "Seata:分布式事务", link: "/guide.md" },          /** 指向Seata:强一致性事务实现起始文章 */
           ]
         },
       ]

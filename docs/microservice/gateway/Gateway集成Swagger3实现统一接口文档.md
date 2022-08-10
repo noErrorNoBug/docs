@@ -1,5 +1,5 @@
 ---
-title: Gateway集成Swagger3实现统一接口文档.md
+title: Gateway集成Swagger3实现统一接口文档
 prev:
   text: Gateway集成Sentinel实现网关限流
   link: /microservice/gateway/Gateway集成Sentinel实现网关限流.md

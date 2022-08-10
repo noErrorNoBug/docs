@@ -1,5 +1,5 @@
 ---
-title: Gateway集成Nacos实现负载均衡和动态配置.md
+title: Gateway集成Nacos实现负载均衡和动态配置
 prev:
   text: Gateway核心原理
   link: /microservice/gateway/Gateway核心原理.md

@@ -1,5 +1,5 @@
 ---
-title: Gateway集成Sentinel实现网关限流.md
+title: Gateway集成Sentinel实现网关限流
 prev:
   text: Gateway集成Nacos实现负载均衡
   link: /microservice/gateway/Gateway集成Nacos实现负载均衡.md

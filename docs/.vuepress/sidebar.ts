@@ -365,10 +365,10 @@ export default defineSidebarConfig({
    */
   "/microservice/": [
     /**
-     * [LoadBalancer负载均衡]模块 侧边栏
+     * [LoadBalancer:负载均衡]模块 侧边栏
      */
      {
-      text: "LoadBalance负载均衡",
+      text: "LoadBalance:负载均衡",
       collapsable: false,
       prefix: "loadbanalce/",
       children: [
@@ -379,10 +379,10 @@ export default defineSidebarConfig({
     },
 
     /**
-     * [OpenFeign函数式调用]模块 侧边栏
+     * [OpenFeign:函数式调用]模块 侧边栏
      */
      {
-      text: "OpenFeign函数式调用",
+      text: "OpenFeign:函数式调用",
       collapsable: false,
       prefix: "feign/",
       children: [
@@ -394,10 +394,10 @@ export default defineSidebarConfig({
     },
 
     /**
-     * [Gateway高可用网关API]模块 侧边栏
+     * [Gateway:高可用网关API]模块 侧边栏
      */
      {
-      text: "Gateway高可用网关API",
+      text: "Gateway:高可用网关API",
       collapsable: false,
       prefix: "gateway/",
       children: [
@@ -411,10 +411,50 @@ export default defineSidebarConfig({
     },
 
     /**
-     * [Nacos注册中心]模块 侧边栏
+     * [Security:认证和授权]模块 侧边栏
      */
      {
-      text: "Nacos注册中心",
+      text: "Security:认证和授权",
+      collapsable: false,
+      prefix: "auth/",
+      children: [
+        "SpringSecurity核心原理.md",
+        "Oauth2协议详解.md", 
+        "SpringSecurityOauth2核心原理.md", 
+        "JWT核心原理.md", 
+        "SpringSecurity实现OOS.md", 
+      ],
+    },
+
+    /**
+     * [Skywalking:链路追踪]模块 侧边栏
+     */
+     {
+      text: "Skywalking:链路追踪",
+      collapsable: false,
+      prefix: "skywalking/",
+      children: [
+        "todo.md",
+      ],
+    },
+
+    /**
+     * [SpringCloud扩展点]模块 侧边栏
+     */
+     {
+      text: "SpringCloud扩展点",
+      collapsable: false,
+      prefix: "extends/",
+      children: [
+        "todo.md",
+      ],
+    },
+
+    /**
+     * [Nacos:注册中心]模块 侧边栏
+     */
+     {
+      text: "Nacos:注册中心",
       collapsable: false,
       prefix: "register/",
       children: [
@@ -425,10 +465,10 @@ export default defineSidebarConfig({
     },
 
     /**
-     * [Nacos配置中心]模块 侧边栏
+     * [Nacos:配置中心]模块 侧边栏
      */
      {
-      text: "Nacos配置中心",
+      text: "Nacos:配置中心",
       collapsable: false,
       prefix: "config/",
       children: [
@@ -438,18 +478,26 @@ export default defineSidebarConfig({
     },
 
     /**
-     * [安全|认证]模块 侧边栏
+     * [Sentinel:服务限流和降级]模块 侧边栏
      */
      {
-      text: "安全|认证",
+      text: "Sentinel:服务限流和降级",
       collapsable: false,
-      prefix: "auth/",
+      prefix: "sentinel/",
       children: [
-        "SpringSecurity核心原理.md",
-        "Oauth2协议详解.md", 
-        "SpringSecurityOauth2核心原理.md", 
-        "JWT核心原理.md", 
-        "SpringSecurity实现OOS.md", 
+        "todo.md",
+      ],
+    },
+
+    /**
+     * [Seata:分布式事务]模块 侧边栏
+     */
+     {
+      text: "Seata:分布式事务",
+      collapsable: false,
+      prefix: "seata/",
+      children: [
+        "todo.md",
       ],
     },
   ],

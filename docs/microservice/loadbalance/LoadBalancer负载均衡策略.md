@@ -1,11 +1,11 @@
 ---
-title: title
+title: LoadBalancer负载均衡策略
 prev:
-  text: 回到首页
-  link: /README.md
+  text: LoadBalancer核心原理
+  link: /microservice/loadbalance/LoadBalancer核心原理.md
 next:
-  text: 回到首页
-  link: /README.md
+  text: LoadBalancer功能扩展
+  link: /microservice/loadbalance/LoadBalancer功能扩展.md
 ---
 ::: info
 文章介绍

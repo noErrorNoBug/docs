@@ -1,11 +1,11 @@
 ---
-title: title
+title: X_OPEN事务模型
 prev:
-  text: 回到首页
-  link: /README.md
+  text: CAP定理和BASE理论
+  link: /methodology/distribution/CAP定理和BASE理论.md
 next:
-  text: 回到首页
-  link: /README.md
+  text: 2PC事务模型
+  link: /methodology/transaction/2PC事务模型.md
 ---
 ::: info
 文章介绍

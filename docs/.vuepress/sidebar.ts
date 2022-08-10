@@ -311,55 +311,6 @@ export default defineSidebarConfig({
   ],
 
 
-
-  /*
-   * [方法论|系统设计]模块 侧边栏
-   */
-  "/methodology/": [
-    /**
-     * [设计模式]模块 侧边栏
-     */
-    {
-      text: "设计模式",
-      collapsable: false,
-      prefix: "patterns/",
-      children: [
-        "单例模式.md", 
-        "工厂模式.md", 
-        "建造者模式.md", 
-        "代理模式.md", 
-        "桥接模式.md", 
-        "装饰器模式.md", 
-        "适配器模式.md", 
-        "思考-代理模式、装饰器模式、适配器模式、桥接模式的异同.md", 
-        "门面模式.md", 
-        "观察者模式.md", 
-        "模板模式.md", 
-        "策略模式.md", 
-        "原型模式.md", 
-      ],
-    },
-
-    /**
-     * [分布式理论]模块 侧边栏
-     */
-    {
-      text: "分布式理论",
-      collapsable: false,
-      prefix: "distribution/",
-      children: [
-        "CAP定理和BASE理论.md", 
-        "X_OPEN事务模型.md", 
-        "2PC事务模型.md", 
-        "3PC事务模型.md", 
-        "TCC事务补偿方案.md", 
-        "基于可靠消息的最终一致性方案.md", 
-        "最大努力通知型事务方案.md", 
-      ],
-    },
-  ],
-
-
   /*
    * [微服务]模块 侧边栏
    */
@@ -502,7 +453,91 @@ export default defineSidebarConfig({
     },
   ],
 
+  /*
+   * [设计模式]模块 侧边栏
+   */
+  "/patterns/": [
+    /**
+     * [创建型]模块 侧边栏
+     */
+    {
+      text: "创建型",
+      collapsable: false,
+      prefix: "build/",
+      children: [
+        "单例模式.md", 
+        "工厂模式.md", 
+        "建造者模式.md", 
+      ],
+    },
 
+    /**
+     * [结构型]模块 侧边栏
+     */
+     {
+      text: "结构型",
+      collapsable: false,
+      prefix: "construct/",
+      children: [
+        "代理模式.md", 
+        "桥接模式.md", 
+        "装饰器模式.md", 
+        "适配器模式.md", 
+        "思考-代理模式、装饰器模式、适配器模式、桥接模式的异同.md", 
+      ],
+    },
+
+    /**
+     * [行为型]模块 侧边栏
+     */
+     {
+      text: "行为型",
+      collapsable: false,
+      prefix: "action/",
+      children: [
+        "门面模式.md", 
+        "观察者模式.md", 
+        "模板模式.md", 
+        "策略模式.md", 
+        "原型模式.md", 
+      ],
+    },
+
+  ],
+
+  /*
+   * [方法论|系统设计]模块 侧边栏
+   */
+  "/methodology/": [
+    /**
+     * [分布式理论]模块 侧边栏
+     */
+    {
+      text: "分布式理论",
+      collapsable: false,
+      prefix: "distribution/",
+      children: [
+        "CAP定理和BASE理论.md", 
+      ],
+    },
+
+    /**
+     * [分布式事务理论]模块 侧边栏
+     */
+     {
+      text: "分布式事务理论",
+      collapsable: false,
+      prefix: "transaction/",
+      children: [
+        "X_OPEN事务模型.md", 
+        "2PC事务模型.md", 
+        "3PC事务模型.md", 
+        "TCC事务补偿方案.md", 
+        "基于可靠消息的最终一致性方案.md", 
+        "最大努力通知型事务方案.md", 
+      ],
+    },
+  ],
 
   /*
    * [工具|部署]模块 侧边栏

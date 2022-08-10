@@ -1,11 +1,11 @@
 ---
-title: title
+title: CAP定理和BASE理论
 prev:
-  text: 回到首页
-  link: /README.md
+  text: 原型模式
+  link: /patterns/action/原型模式.md
 next:
-  text: 回到首页
-  link: /README.md
+  text: X_OPEN事务模型
+  link: /methodology/transaction/X_OPEN事务模型.md
 ---
 ::: info
 文章介绍

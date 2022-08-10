@@ -1,11 +1,11 @@
 ---
-title: title
+title: 3PC事务模型
 prev:
-  text: 回到首页
-  link: /README.md
+  text: 2PC事务模型
+  link: /methodology/transaction/2PC事务模型.md
 next:
-  text: 回到首页
-  link: /README.md
+  text: TCC事务补偿方案
+  link: /methodology/transaction/TCC事务补偿方案.md
 ---
 ::: info
 文章介绍

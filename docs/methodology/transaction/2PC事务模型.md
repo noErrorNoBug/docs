@@ -1,11 +1,11 @@
 ---
-title: title
+title: 2PC事务模型
 prev:
-  text: 回到首页
-  link: /README.md
+  text: X_OPEN事务模型
+  link: /methodology/transaction/X_OPEN事务模型.md
 next:
-  text: 回到首页
-  link: /README.md
+  text: 3PC事务模型
+  link: /methodology/transaction/3PC事务模型.md
 ---
 ::: info
 文章介绍

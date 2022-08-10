@@ -1,11 +1,11 @@
 ---
-title: title
+title: TCC事务补偿方案
 prev:
-  text: 回到首页
-  link: /README.md
+  text: 3PC事务模型
+  link: /methodology/transaction/3PC事务模型.md
 next:
-  text: 回到首页
-  link: /README.md
+  text: 基于可靠消息的最终一致性方案
+  link: /methodology/transaction/基于可靠消息的最终一致性方案.md
 ---
 ::: info
 文章介绍

@@ -321,7 +321,7 @@ export default defineSidebarConfig({
      {
       text: "LoadBalance:负载均衡",
       collapsable: false,
-      prefix: "loadbanalce/",
+      prefix: "loadbalance/",
       children: [
         "LoadBalancer核心原理.md",
         "LoadBalancer负载均衡策略.md", 

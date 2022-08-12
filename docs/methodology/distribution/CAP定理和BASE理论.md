@@ -4,8 +4,8 @@ prev:
   text: 原型模式
   link: /patterns/action/原型模式.md
 next:
-  text: X_OPEN事务模型
-  link: /methodology/transaction/X_OPEN事务模型.md
+  text: ZAB协议
+  link: /methodology/distribution/ZAB协议.md
 ---
 ::: info
 &#8195;&#8195;CAP定理和Base理论是分布式架构的两个基础理论，以此衍生出多种算法和协议来保证分布式系统的稳定运行。

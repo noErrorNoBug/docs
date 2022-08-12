@@ -411,7 +411,6 @@ export default defineSidebarConfig({
       children: [
         "基于AP架构下的Nacos服务注册和服务发现原理.md",
         "基于CP架构下的Nacos服务注册和服务发现原理.md", 
-        "基于Nacos的注册中心扩展.md", 
       ],
     },
 
@@ -518,6 +517,8 @@ export default defineSidebarConfig({
       prefix: "distribution/",
       children: [
         "CAP定理和BASE理论.md", 
+        "ZAB协议.md", 
+        "Raft协议.md", 
       ],
     },
 

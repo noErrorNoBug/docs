@@ -8,14 +8,18 @@ next:
   link: /microservice/register/基于CP架构下的Nacos服务注册和服务发现原理.md
 ---
 ::: info
-&#8195;&#8195;Nacos注册中心提供了很多关键的特性，如**服务发现和服务健康检测、动态配置服务、动态DNS、服务和元数据管理**。服务发现和服务健康检测是作为注册中心最核心的功能。
+&#8195;&#8195;Nacos注册中心提供了很多关键的特性，如**服务发现和服务健康检测、动态配置服务、动态DNS、服务和元数据管理**。服务发现、服务注册和服务健康检测是作为注册中心最核心的功能。
+
+&#8195;&#8195;除以上功能外，作为注册中心集群，也具备正常分布式集群的特性。
+
+&#8195;&#8195;本文根据源码实现说明Nacos如何实现[AP架构](../../methodology/distribution/CAP定理和BASE理论.md)的注册中心。
 :::
 [[toc]]
 
 ***
-## Nacos架构
+## Nacos概述
 
-### Nacos 组件
+### 组件和功能
 
 ![Nacos架构](/images/microservice/register/Nacos架构.png)
 
@@ -28,11 +32,11 @@ next:
     * Nacos Core：Nacos核心模块。
 * Nacos Console：Nacos控制台。
 
-### 服务注册与发现交互流程
+### 服务发现和注册整体流程
 
 ![服务注册与发现原理](/images/microservice/register/服务注册与发现原理.png)
 
-服务注册和发现的流程如上图所示：
+&#8195;&#8195;服务注册和发现的流程如上图所示：
 
 1. 首先服务提供者实例通过调用Open API发起服务注册。
 2. 服务提供方实例通过Open API与Nacos Server建立心跳机制，检测服务状态。
@@ -41,12 +45,16 @@ next:
 5. 如果Nacos Server检测到服务提供者异常，会基于UDP协议推送更新。
 6. 服务消费者通过列表与服务提供者进行通讯。
 
-
-## 服务注册原理
+## 服务发现和注册原理
 
 ### Client端发起服务注册
 
-Client端的服务注册可以抽象为这么几个过程：
+
+#### Client端发起注册流程
+![Client端服务注册流程图](/images/microservice/register/Client端服务注册流程图.png)
+
+
+&#8195;&#8195;Client端的服务注册可以抽象为这么几个过程：
 
 1. **通过自动装配初始化服务注册需要的Bean。**
 2. **实现Spring的事件监听机制，通过事件监听进行服务注册。**
@@ -56,14 +64,9 @@ Client端的服务注册可以抽象为这么几个过程：
     * **通过定时任务实现心跳健康状态发送。**
     * **封装OpenAPI调用，向Server发送注册信息。**
 
-![Client端服务注册流程图](/images/microservice/register/Client端服务注册流程图.png)
+#### Spring Cloud生态下发起注册的时机
 
-
-#### 自动装配需要的Bean
-
-- **Spring Cloud生态下自动装配：**
-
-**Nacos通过自动装配实现事件监听的方式实现SpringCloud的集成。其中AutoServiceRegistrationAutoConfiguration类就是服务注册相关的配置类**，其代码如下：
+&#8195;&#8195;**Nacos通过自动装配实现事件监听的方式实现SpringCloud的集成。其中AutoServiceRegistrationAutoConfiguration类就是服务注册相关的配置类**，其代码如下：
 
 ```java
 @Configuration(
@@ -92,7 +95,7 @@ public class AutoServiceRegistrationAutoConfiguration {
 }
 ```
 
-**配置类中注入了一个AutoServiceRegistration类**，该类的类关系图如下：
+&#8195;&#8195;**配置类中注入了一个AutoServiceRegistration类**，该类的类关系图如下：
 
 ![继承关系](/images/microservice/register/继承关系.png)
 
@@ -107,14 +110,14 @@ public interface ApplicationListener<E extends ApplicationEvent> extends EventLi
     void onApplicationEvent(E var1);
 }
 ```
-AbstractAutoServiceRegistration实现了事件监听的具体逻辑，主要**注册监听了WebServerInitializedEvent事件（WebServer初始化完成后），调用了this.bind(event)方法**：
+&#8195;&#8195;AbstractAutoServiceRegistration实现了事件监听的具体逻辑，主要**注册监听了WebServerInitializedEvent事件（WebServer初始化完成后），调用了this.bind(event)方法**：
 ```java
 public void onApplicationEvent(WebServerInitializedEvent event) {
     this.bind(event);
 }
 ```
 
-继续跟进，发现**最终调用了NacosServiceRegistry.register方法进行服务注册**。
+&#8195;&#8195;继续跟进，发现**最终调用了NacosServiceRegistry.register方法进行服务注册**。
 
 ```java
 protected void register() {
@@ -122,9 +125,9 @@ protected void register() {
 }
 ```
 
-- **Dubbo生态下自动装配Bean：**
+#### Dubbo生态下发起服务注册的时机：
 
-在Dubbo的自动装配中，使用DubboLoadBalancedRestTemplateAutoConfiguration进行自动配置，这个类中，有一个@EventListener({ApplicationStartedEvent.class})事件的监听，它会**监听ApplicationStartedEvent事件（刷新上下文之后，调用application命令之前触发）**
+&#8195;&#8195;在Dubbo的自动装配中，使用DubboLoadBalancedRestTemplateAutoConfiguration进行自动配置，这个类中，有一个@EventListener({ApplicationStartedEvent.class})事件的监听，它会**监听ApplicationStartedEvent事件（刷新上下文之后，调用application命令之前触发）**
 
 ```java
 @EventListener({ApplicationStartedEvent.class})
@@ -142,13 +145,10 @@ public void adaptRestTemplates() {
 }
 ```
 
-同样的收到事件的通知后，也是最终低啊用NacosServiceRegistry类中的register方法实现服务的注册。
+&#8195;&#8195;同样的收到事件的通知后，也是最终低啊用NacosServiceRegistry类中的register方法实现服务的注册。
 
-#### 监听事件调用服务注册
-
-##### 注册方法实现
-
-**SpringCloud提供了一个接口ServiceRegistry用来提供服务注册的标准，所有集成到SpringCloud的服务注册组件，都需要实现这个接口来提供服务注册功能**：
+#### Spring监听事件调用服务注册的方法
+&#8195;&#8195;**SpringCloud提供了一个接口ServiceRegistry用来提供服务注册的标准，所有集成到SpringCloud的服务注册组件，都需要实现这个接口来提供服务注册功能**：
 
 ```java
 public interface ServiceRegistry<R extends Registration> {
@@ -160,9 +160,9 @@ public interface ServiceRegistry<R extends Registration> {
 }
 ```
 
-**NacosServiceRegistry类**就是对ServiceRegistry的实现类，**在其内部实现了服务注册、心跳健康监听发送等功能**。
+&#8195;&#8195;**NacosServiceRegistry类**就是对ServiceRegistry的实现类，**在其内部实现了服务注册、心跳健康监听发送等功能**。
 
-**NacosServiceRegistry#registry()方法是实现服务注册的主要方法，方法中调用了NacosClient SDK中的namingService#registerInstance()方法实现服务注册**：
+&#8195;&#8195;**NacosServiceRegistry#registry()方法是实现服务注册的主要方法，方法中调用了NacosClient SDK中的namingService#registerInstance()方法实现服务注册**：
 
 ```java
 public void register(Registration registration) {
@@ -183,9 +183,7 @@ public void register(Registration registration) {
 }
 ```
 
-#### 注册流程
-
-**namingService#registerInstance()方法主要逻辑如下：**
+&#8195;&#8195;**namingService#registerInstance()方法主要逻辑如下：**
 
 * **beatReactor.addBeatInfo：创建心跳信息实现健康检测。**
 * **serverProxy.registerService：实现服务注册**
@@ -209,11 +207,8 @@ public void registerInstance(String serviceName, String groupName, Instance inst
 }
 ```
 
-### 心跳机制建立和注册信息发送
-
-#### 心跳机制
-
-**心跳机制的实现如下代码所示，client通过一个定时任务线程池schedule定时向服务端发送心跳数据包，然后启动一个线程不断检测服务端的回应，如果在设定时间内没有收到服务端的回应就认为服务端故障**。
+#### 注册心跳
+&#8195;&#8195;**心跳机制的实现如下代码所示，client通过一个定时任务线程池schedule定时向服务端发送心跳数据包，然后启动一个线程不断检测服务端的回应，如果在设定时间内没有收到服务端的回应就认为服务端故障**。
 
 ```java
 public void addBeatInfo(String serviceName, BeatInfo beatInfo) {
@@ -230,10 +225,9 @@ public void addBeatInfo(String serviceName, BeatInfo beatInfo) {
     MetricsMonitor.getDom2BeatSizeMonitor().set((double)this.dom2Beat.size());
 }
 ```
+#### 发送服务注册信息
 
-#### 注册信息发送
-
-Nacos的Server端是通过Open API的形式实现服务注册与发现的，对于Client端的SDK一样，就是封装了一个固定的对OpenAPI的调用，然后发送到服务端
+&#8195;&#8195;Nacos的Server端是通过Open API的形式实现服务注册与发现的，对于Client端的SDK一样，就是封装了一个固定的对OpenAPI的调用，然后发送到服务端
 
 ```java
 public void registerService(String serviceName, String groupName, Instance instance) throws NacosException {
@@ -254,13 +248,13 @@ public void registerService(String serviceName, String groupName, Instance insta
 }
 ```
 
-## Server端服务注册
-
+### Server端注册微服务
+#### 注册流程
 ![Server端服务注册流程](/images/microservice/register/Server端服务注册流程.png)
 
-### OpenAPI接口
+#### OpenAPI接口
 
-服务端服务注册的Open API实现接口在**InstanceController类**(naming实例)中，需要获取到服务、实例的相关参数，然后**调用registerInstance注册实例**。
+&#8195;&#8195;服务端服务注册的Open API实现接口在**InstanceController类**(naming实例)中，需要获取到服务、实例的相关参数，然后**调用registerInstance注册实例**。
 
 ```java
 @CanDistro
@@ -280,9 +274,7 @@ public String register(HttpServletRequest request) throws Exception {
 }
 ```
 
-### 服务注册表结构
-
-#### 服务发现的领域模型
+#### 命名空间领域模型
 
 ![命名空间领域模型](/images/microservice/register/命名空间领域模型.png)
 
@@ -295,10 +287,9 @@ public String register(HttpServletRequest request) throws Exception {
 
 ![命名空间例子](/images/microservice/register/命名空间例子.png)
 
+#### 注册表数据结构
 
-#### 服务注册表的数据结构
-
-服务注册表的数据结构就是根据上述领域模型进行建模的，**整体是由一个ConcurrentHashMap组成**。
+&#8195;&#8195;服务注册表的数据结构就是根据上述领域模型进行建模的，**整体是由一个ConcurrentHashMap组成**。
 
 ```java
 /**
@@ -311,9 +302,10 @@ private final Map<String, Map<String, Service>> serviceMap = new ConcurrentHashM
 
 ![服务注册表](/images/microservice/register/服务注册表.png)
 
-### 服务注册流程
 
-在实际服务注册过程中需要完成以下三个步骤：
+#### 服务注册流程
+
+&#8195;&#8195;在实际服务注册过程中需要完成以下三个步骤：
 
 * **初始化服务列表**：初始化一个空的ConcurrentHashMap集合作为serviceMap，用于存储服务实例。
 * **获取服务实例**：从serviceMap中根据namespaceId和serviceName得到一个服务对象。
@@ -334,9 +326,8 @@ public void registerInstance(String namespaceId, String serviceName, Instance in
 }
 ```
 
-### 注册表初始化
 
-服务列表初始化最终调用了createServiceIfAbsent()方法，主要实现了两个功能：
+&#8195;&#8195;**服务列表初始化**最终调用了createServiceIfAbsent()方法，主要实现了两个功能：
 
 * **从服务列表中获取实例**
 * **如果实例为空，则创建和初始化实例**
@@ -370,7 +361,7 @@ public void createServiceIfAbsent(String namespaceId, String serviceName, boolea
 }
 ```
 
-对于创建和初始化的逻辑，主要有3个功能：
+&#8195;&#8195;对于创建和初始化的逻辑，主要有3个功能：
 
 * **将实例存入服务列表**：存入ConcurrentHashMap，这里面的put为了保证单例使用了双重检测保证线程安全。
 * **建立心跳检测机制**：service.init()，通过定时任务不断检测当前服务所有实例发送心跳包的时间，如果超时就将healty设置为false，并且发送服务变更事件。
@@ -389,9 +380,9 @@ private void putServiceAndInit(Service service) throws NacosException {
     Loggers.SRV_LOG.info("[NEW-SERVICE] {}", service.toJson());
 }
 ```
-#### 将服务存入注册表
 
-**将服务存入注册表使用的是双重检查，以保证多线程操作的安全性**。
+
+&#8195;&#8195;**将服务存入注册表使用的是双重检查，以保证多线程操作的安全性**。
 
 ```java
 public void putService(Service service) {
@@ -406,9 +397,8 @@ public void putService(Service service) {
 }
 ```
 
-#### 服务初始化
 
-服务初始化主要是启动两个定时线程：心跳检测线程和健康检测线程
+&#8195;&#8195;服务初始化主要是启动两个定时线程：心跳检测线程和健康检测线程
 
 * **心跳检测任务**：**延迟5s，定时5s**。
     1. 获取Server的所有实例
@@ -467,13 +457,10 @@ public void run() {
 }
 ```
 
-### 注册服务实例（异步任务与内存队列）
+#### 注册服务实例（异步任务与内存队列）
+&#8195;&#8195;通过异步注册，可以快速的给Client返回结果，不会影响Client的启动时间。
 
-通过异步注册，可以快速的给Client返回结果，不会影响Client的启动时间。
-
-#### 阻塞队列
-
-添加服务实例列表的主要逻辑是对实例列表的构建，由于区分了是否持久化，因此会有两套逻辑。它的**核心是最终的addTask()方法，通过异步的方式添加实例，将实例添加到一个阻塞队列中**。
+&#8195;&#8195;添加服务实例列表的主要逻辑是对实例列表的构建，由于区分了是否持久化，因此会有两套逻辑。它的**核心是最终的addTask()方法，通过异步的方式添加实例，将实例添加到一个阻塞队列中**。
 
 ```java
 private BlockingQueue<Pair<String, DataOperation>> tasks = new ArrayBlockingQueue<>(1024 * 1024);
@@ -483,9 +470,8 @@ public void addTask(String datumKey, DataOperation action) {
     tasks.offer(Pair.with(datumKey, action));
 }
 ```
-#### 异步任务
 
-**队列中的任务由其他线程异步执行（这个线程通过@PostConstruction 进行初始化的），通过无限的for循环不断的进行注册**，完成真正的实例注册：
+&#8195;&#8195;**队列中的任务由其他线程异步执行（这个线程通过@PostConstruction 进行初始化的），通过无限的for循环不断的进行注册**，完成真正的实例注册：
 
 ```java
 @Override
@@ -533,7 +519,7 @@ private void handle(Pair<String, DataOperation> pair) {
     }
 }
 ```
-真正执行注册的逻辑：
+&#8195;&#8195;真正执行注册的逻辑：
 ```java
 public void updateIps(List<Instance> ips, boolean ephemeral) {
     
@@ -550,9 +536,9 @@ public void updateIps(List<Instance> ips, boolean ephemeral) {
 }
 ```
 
-### CopyOnWrite机制防止多节点读写并发冲突
+#### CopyOnWrite机制防止多节点读写并发冲突
 
-为了防止注册中心Server出现并发读写的冲突，也就是修改注册表的同时如果有实例拉取注册表，那么会有并发安全问题。**Nacos通过写时复制的原理来防止并发冲突**。**其原理就是复制一份注册列表进行修改，修改完成后赋值到原来的旧的列表，只要保证写的同步安全就可以了。为了充分的利用内存，应该保证复制的数据结构为最小单元，Nacos中复制的单元为实例列表，也就是最小的列表单元了**。
+&#8195;&#8195;为了防止注册中心Server出现并发读写的冲突，也就是修改注册表的同时如果有实例拉取注册表，那么会有并发安全问题。**Nacos通过写时复制的原理来防止并发冲突**。**其原理就是复制一份注册列表进行修改，修改完成后赋值到原来的旧的列表，只要保证写的同步安全就可以了。为了充分的利用内存，应该保证复制的数据结构为最小单元，Nacos中复制的单元为实例列表，也就是最小的列表单元了**。
 
 ```java
 public void updateIps(List<Instance> ips, boolean ephemeral) {
@@ -580,16 +566,14 @@ public void updateIps(List<Instance> ips, boolean ephemeral) {
 }
 ```
 
+## 服务健康检测
 
-# 心跳机制
-
-## Client端
-
+### Client端心跳机制
 ![Client端心跳机制](/images/microservice/register/Client端心跳机制.png)
 
-Client端心跳机制的建立是包含在服务注册的过程中的，在注册过程中会创建延迟任务并且执行BeatTask。
+&#8195;&#8195;Client端心跳机制的建立是包含在服务注册的过程中的，在注册过程中会创建延迟任务并且执行BeatTask。
 
-首先是延迟任务执行，**默认延迟时间是5s**。在注册服务时是第一次执行延迟任务。
+&#8195;&#8195;首先是延迟任务执行，**默认延迟时间是5s**。在注册服务时是第一次执行延迟任务。
 
 ```java
 public void addBeatInfo(String serviceName, BeatInfo beatInfo) {
@@ -599,7 +583,8 @@ public void addBeatInfo(String serviceName, BeatInfo beatInfo) {
     }
     
 ```
-对于BeatTask而言，除了发送心跳包外，还要自己继续创建延迟线程，以完成循环。
+
+&#8195;&#8195;对于BeatTask而言，除了发送心跳包外，还要自己继续创建延迟线程，以完成循环。
 ```java
 public void run() {
     if (!this.beatInfo.isStopped()) {
@@ -616,26 +601,24 @@ public void run() {
     }
 }
 ```
-
-## Server端
-
+### Server端检测心跳机制
 ![Server端心跳机制](/images/microservice/register/Server端心跳机制.png)
 
 
-对于server端心跳机制也是在服务注册时触发，创建一个线程池，延迟5s/定时每5s执行，主要是判断是否健康和是否需要下线。
+&#8195;&#8195;对于server端心跳机制也是在服务注册时触发，创建一个线程池，延迟5s/定时每5s执行，主要是判断是否健康和是否需要下线。
 
-下线则是调用服务下线的OpenAPI进行下线。
+&#8195;&#8195;下线则是调用服务下线的OpenAPI进行下线。
 
-# 服务发现流程
 
-## 拉取服务列表
+## 服务发现
 
-### Client端
+### Client端服务列表拉取
+
 ![Client端拉取服务列表](/images/microservice/register/Client端拉取服务列表.png)
 
-在Client端的拉取服务列表很简单，本地会缓存一个服务列表，当需要进行调用查找时，先查找本地的服务列表，如果本地服务列表为空，则调用Server端的OpenAPI拉取；否则直接从服务列表中获取。
+&#8195;&#8195;在Client端的拉取服务列表很简单，本地会缓存一个服务列表，当需要进行调用查找时，先查找本地的服务列表，如果本地服务列表为空，则调用Server端的OpenAPI拉取；否则直接从服务列表中获取。
 
-获取到服务列表后，插入一个延迟任务（默认1s），延迟更新服务列表。
+&#8195;&#8195;获取到服务列表后，插入一个延迟任务（默认1s），延迟更新服务列表。
 
 ```java
 public ServiceInfo getServiceInfo(String serviceName, String clusters) {
@@ -669,11 +652,10 @@ public ServiceInfo getServiceInfo(String serviceName, String clusters) {
 }
 ```
 
-### Server端
-
+### Server端服务列表拉取
 ![Server端拉取服务列表](/images/microservice/register/Server端拉取服务列表.png)
 
-Server端主要是InstanceController中的list()接口的逻辑，除了参数处理外，主要的逻辑就是从数据结构中取出Instance列表：
+&#8195;&#8195;Server端主要是InstanceController中的list()接口的逻辑，除了参数处理外，主要的逻辑就是从数据结构中取出Instance列表：
 
 ```java
 public List<Instance> allIPs() {
@@ -685,23 +667,20 @@ public List<Instance> allIPs() {
 }
 ```
 
-## 服务变动推送
-
+### 服务变动推送
 ![服务变更推送](/images/microservice/register/服务变更推送.png)
 
-服务变动推送是在服务注册的流程中触发的，服务注册是通过阻塞队列多线程异步进行的，**异步线程在更新实例列表的同时会发布一个ServiceChangedEvent，服务订阅该事件，通过UDP的方式进行发送**。**UDP的端口则是Client调用/instance/list时携带过来的**。
+&#8195;&#8195;服务变动推送是在服务注册的流程中触发的，服务注册是通过阻塞队列多线程异步进行的，**异步线程在更新实例列表的同时会发布一个ServiceChangedEvent，服务订阅该事件，通过UDP的方式进行发送**。**UDP的端口则是Client调用/instance/list时携带过来的**。
 
-采用异步事件订阅+UDP进行变更推送性能会比较不错，相比Zookeeper来说，长时间心跳维持TCP长连接非常消耗性能，UDP就不用担心。对于UDP的缺点就是丢包，Nacos也设置了重试机制，重试一定次数后就不再进行发送。由于有Client端定时拉取手段作为兜底，即便主动推送的能力被削弱甚至推送异常也不会产生太大的影响。
+&#8195;&#8195;采用异步事件订阅+UDP进行变更推送性能会比较不错，相比Zookeeper来说，长时间心跳维持TCP长连接非常消耗性能，UDP就不用担心。对于UDP的缺点就是丢包，Nacos也设置了重试机制，重试一定次数后就不再进行发送。由于有Client端定时拉取手段作为兜底，即便主动推送的能力被削弱甚至推送异常也不会产生太大的影响。
 
-## 服务下线
+### 服务下线
+&#8195;&#8195;服务下线相对而言就比较好理解了，通过提供OpenAPI进行调用，最后核心还是将Set\<Instance\>移除，用的是同一套代码，只是操作参数传入的是REMOVE。
 
-服务下线相对而言就比较好理解了，通过提供OpenAPI进行调用，最后核心还是将Set\<Instance\>移除，用的是同一套代码，只是操作参数传入的是REMOVE。
+## 集群架构原理
 
-# 集群原理
-
-## 集群架构心跳机制
-
-集群架构的心跳机制非常简单，**同一个Service的心跳监测只会运行在一台NacosService上**。在心跳的业务触发前，会对机器Hash并且取模，如果是本台机器则执行：
+### 集群架构心跳机制
+&#8195;&#8195;集群架构的心跳机制非常简单，**同一个Service的心跳监测只会运行在一台NacosService上**。在心跳的业务触发前，会对机器Hash并且取模，如果是本台机器则执行：
 
 ```java
 public void run() {
@@ -717,11 +696,10 @@ public void run() {
         // 心跳task的其他核心业务省略
 }
 ```
-## 集群节点状态同步
-
+### 集群节点状态同步
 ![集群节点状态感知](/images/microservice/register/集群节点状态感知.png)
 
-节点状态同步，任务是一个@PostConstruction初始化的任务，由ServiceStatusReporter进行初始化。默认延迟时间为2s。该节点会循环往所有其他节点发送状态信息（心跳）。一旦宕机，其他节点会感知到并且重新计算。发送完毕后，继续发布一个延迟2s的任务。
+&#8195;&#8195;节点状态同步，任务是一个@PostConstruction初始化的任务，由ServiceStatusReporter进行初始化。默认延迟时间为2s。该节点会循环往所有其他节点发送状态信息（心跳）。一旦宕机，其他节点会感知到并且重新计算。发送完毕后，继续发布一个延迟2s的任务。
 
 ```java
 public void run() {
@@ -746,19 +724,19 @@ public void run() {
 }
 
 ```
-## 服务新增数据同步
-
+### 服务新增数据同步
 ![新增服务数据同步](/images/microservice/register/新增服务数据同步.png)
 
-数据新增是在服务注册最后一步异步同步数据完成的，整体过程是一个异步同步的过程，但是细节比较绕，先将服务信息存入一个Map，另一个定时线程来取出，再存入一个队列。再有一个线程从队列中取出，给另一个线程发送。
+&#8195;&#8195;数据新增是在服务注册最后一步异步同步数据完成的，整体过程是一个异步同步的过程，但是细节比较绕，先将服务信息存入一个Map，另一个定时线程来取出，再存入一个队列。再有一个线程从队列中取出，给另一个线程发送。
 
-## 服务变更数据同步
+### 服务变更数据同步
 
-服务状态（健康状态）在集群之间的同步也是通过一个task完成，这个task由ServiceManager使用@PostConstruct初始化，延迟6s执行。同步发起的机器就是做健康检查的那台机器。将服务的健康状况发送到集群其他节点，并且继续循环。
+&#8195;&#8195;服务状态（健康状态）在集群之间的同步也是通过一个task完成，这个task由ServiceManager使用@PostConstruct初始化，延迟6s执行。同步发起的机器就是做健康检查的那台机器。将服务的健康状况发送到集群其他节点，并且继续循环。
 
 ![服务健康状态同步](/images/microservice/register/服务健康状态同步.png)
 
-# 附录：整体细节
+
+# 附录：源码流程
 
 ![Nacos源码剖析](/images/microservice/register/Nacos源码剖析.png)
 

@@ -114,7 +114,7 @@ next:
 - 比较每个长轮询请求中携带的groupKey，如果配置一样则返回给客户端。
 
 ## 附录：源码流程图
-![Nacos配置中心源码分析](/images/microservice/config/Nacos配置中心源码分析.png)
+![Nacos配置中心源码分析](/images/microservice/config/Nacos配置中心源码分析.jpg)
 ***
 参考
 - Spring Cloud Alibaba 微服务原理与实战[谭峰(mic)]. 中国工信出版社,电子工业出版社

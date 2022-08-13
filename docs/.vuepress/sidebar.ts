@@ -423,7 +423,7 @@ export default defineSidebarConfig({
       prefix: "config/",
       children: [
         "基于Nacos的配置中心实现.md",
-        "Nacos配置中心源码解析.md", 
+        "Nacos配置中心核心原理.md", 
       ],
     },
 

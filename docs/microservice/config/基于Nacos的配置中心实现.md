@@ -4,8 +4,8 @@ prev:
   text: 基于Nacos的注册中心扩展
   link: /microservice/register/基于Nacos的注册中心扩展.md
 next:
-  text: Nacos配置中心源码解析
-  link: /microservice/config/Nacos配置中心源码解析.md
+  text: Nacos配置中心核心原理
+  link: /microservice/config/Nacos配置中心核心原理.md
 ---
 ::: info
 &#8195;&#8195;开源配置中心的方案有很多，比如Zookeeper、Spring Cloud Config等。无论哪种方案，其核心原理和目的都是一样的。Nacos通过Config Service实现了对配置的CURD、版本管理、灰度管理、监听管理、推送轨迹、聚合数据等功能。
@@ -66,7 +66,9 @@ public class Application {
 ```
 
 &#8195;&#8195;此时启动项目我们可以得到输出结果为 “测试输出本地配置”。下面我们在配置中心中添加配置，如下图所示：
+
 ![配置中心快速开始](/images/microservice/config/配置中心快速开始.png)
+
 &#8195;&#8195;此时我们可以得到输出“输出配置中心配置”。至此一个简单的动态更新配置的demo就算完成了。
 
 ## 外部化配置

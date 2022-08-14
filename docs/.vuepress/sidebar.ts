@@ -141,6 +141,23 @@ export default defineSidebarConfig({
   ],
 
   /*
+   * [算法]模块 侧边栏
+   */
+  "/algorithm/": [
+    /**
+     * [领域模型算法]模块 侧边栏
+     */
+    {
+      text: "领域模型算法",
+      collapsable: false,
+      prefix: "domain/",
+      children: [
+        "限流算法.md", 
+      ],
+    },
+  ],
+
+  /*
    * [数据库]模块 侧边栏
    */
   "/db/": [

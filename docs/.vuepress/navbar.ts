@@ -168,7 +168,7 @@ export default defineNavbarConfig([
           { text: "字符串匹配算法", link: "/guide.md" },         /** 指向字符串匹配算法起始文章 */
           { text: "数据一致性算法", link: "/guide.md" },         /** 指向数据一致性算法起始文章 */
           { text: "负载均衡算法", link: "/guide.md" },         /** 指向搜索算法起始文章 */
-          { text: "限流算法", link: "/guide.md" },         /** 指向限流算法起始文章 */
+          { text: "限流算法", link: "/algorithm/domain/限流算法.md" },         /** 指向限流算法起始文章 */
           { text: "数据处理算法", link: "/guide.md" },         /** 指向数据处理算法起始文章 */
         ]
       },

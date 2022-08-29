@@ -389,7 +389,7 @@ export default defineNavbarConfig([
           text: "Spring Cloud Alibaba 生态", children: [
             { text: "Nacos:服务注册与发现", link: "/microservice/register/基于AP架构下的Nacos服务注册和服务发现原理.md" },          /** 指向服务注册与发现起始文章 */
             { text: "Nacos:配置中心", link: "/microservice/config/基于Nacos的配置中心实现.md" },          /** 指向配置中心起始文章 */
-            { text: "Sentinel:限流和降级", link: "/guide.md" },          /** 指向Sentinel:限流和降级起始文章 */
+            { text: "Sentinel:限流和降级", link: "/microservice/sentinel/基于Sentinel实现服务限流.md" },          /** 指向Sentinel:限流和降级起始文章 */
             { text: "Seata:分布式事务", link: "/guide.md" },          /** 指向Seata:强一致性事务实现起始文章 */
           ]
         },

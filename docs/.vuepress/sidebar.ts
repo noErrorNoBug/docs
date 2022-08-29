@@ -452,7 +452,11 @@ export default defineSidebarConfig({
       collapsable: false,
       prefix: "sentinel/",
       children: [
-        "todo.md",
+        "基于Sentinel实现服务限流.md",
+        "Sentinel规则配置说明.md",
+        "Sentinel整合RestTemplate和OpenFeign.md",
+        "Sentinel核心原理.md",
+        "Sentinel持久化原理.md",
       ],
     },
 

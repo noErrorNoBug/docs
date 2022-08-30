@@ -538,6 +538,17 @@ export default defineSidebarConfig({
       prefix: "distribution/",
       children: [
         "CAP定理和BASE理论.md", 
+      ],
+    },
+
+    /**
+     * [数据一致性算法]模块 侧边栏
+     */
+     {
+      text: "数据一致性算法",
+      collapsable: false,
+      prefix: "distribution/",
+      children: [
         "ZAB协议.md", 
         "Raft协议.md", 
       ],

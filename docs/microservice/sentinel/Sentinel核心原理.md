@@ -75,7 +75,7 @@ ProcessorSlot<Object> chain = lookProcessChain(resourceWrapper);
 :::
 
 ### 规则存储
-&#8195;&#8195;**流控规则的实现是FlowRule类**，在FlowSlot中，通过资源名称获取到FlowRule的集合。FlowRule中的属性即配置时需要的QPS、线程数、单机阈值、是否集群、流控模式、流控效果等等。
+&#8195;&#8195;**流控规则的实现是FlowRule类**，在FlowSlot中，利用FlowRuleManager管理流控规则，通过资源名称获取到FlowRule的集合。FlowRule中的属性即配置时需要的QPS、线程数、单机阈值、是否集群、流控模式、流控效果等等。
 
 ### 校验规则
 &#8195;&#8195;通过循环上一步获取到的FlowRule集合，根据流控模式选择不同的实现，下面是直接失败模式的流程：

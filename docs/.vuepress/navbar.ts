@@ -34,7 +34,9 @@ import { defineNavbarConfig } from "vuepress-theme-hope";
 export default defineNavbarConfig([
   {
     text: "面试题",
-    link: "/面试题.md"
+    children:[
+      { text: "面试题", link: "/面试题.md" }
+    ]
   },
   /**
    * [Java]模块 导航栏

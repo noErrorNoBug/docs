@@ -1,6 +1,14 @@
 import { defineSidebarConfig } from "vuepress-theme-hope";
 
 export default defineSidebarConfig({
+  "questions":[
+    {
+      text: "面试题",   // 必填，标题
+      children: [
+        "分布式和微服务面试题.md",
+      ],
+    },
+  ],
   /**
    * [Java]模块 侧边栏
    */

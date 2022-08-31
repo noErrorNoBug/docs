@@ -145,6 +145,22 @@ export default defineSidebarConfig({
    */
   "/algorithm/": [
     /**
+     * [分布式算法]模块 侧边栏
+     */
+     {
+      text: "分布式算法",
+      collapsable: false,
+      prefix: "distribution/",
+      children: [
+        "一致性Hash算法.md",
+        "Paxos算法.md",
+        "ZAB协议.md", 
+        "Raft协议.md", 
+        "Snowflake算法.md"
+      ],
+    },
+
+    /**
      * [领域模型算法]模块 侧边栏
      */
     {
@@ -537,22 +553,11 @@ export default defineSidebarConfig({
       collapsable: false,
       prefix: "distribution/",
       children: [
+        "分布式系统特点.md",
         "CAP定理和BASE理论.md", 
       ],
     },
 
-    /**
-     * [数据一致性算法]模块 侧边栏
-     */
-     {
-      text: "数据一致性算法",
-      collapsable: false,
-      prefix: "distribution/",
-      children: [
-        "ZAB协议.md", 
-        "Raft协议.md", 
-      ],
-    },
 
     /**
      * [分布式事务理论]模块 侧边栏

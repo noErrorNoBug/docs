@@ -32,6 +32,10 @@
 import { defineNavbarConfig } from "vuepress-theme-hope";
 
 export default defineNavbarConfig([
+  {
+    text: "面试题",
+    link: "/面试题.md"
+  },
   /**
    * [Java]模块 导航栏
    */
@@ -428,7 +432,7 @@ export default defineNavbarConfig([
        */
       {
         text: "分布式理论", children: [
-          { text: "分布式理论和模型", link: "/methodology/distribution/CAP定理和BASE理论.md" },    /** 指向分布式理论和模型起始文章 */
+          { text: "分布式理论和模型", link: "/methodology/distribution/分布式系统特点.md" },    /** 指向分布式理论和模型起始文章 */
           { text: "分布式事务理论", link: "/methodology/transaction/X_OPEN事务模型.md" },      /** 指向事务理论和模型起始文章 */
           { text: "微服务理论", link: "/guide.md" },          /** 指向微服务理论起始文章 */
         ]

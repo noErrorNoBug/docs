@@ -5,6 +5,7 @@ export default defineSidebarConfig({
     {
       text: "面试题",   // 必填，标题
       children: [
+        "Java面试题.md",
         "框架中间件面试题.md",
         "分布式和微服务面试题.md",
       ],

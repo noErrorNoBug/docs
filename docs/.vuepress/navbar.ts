@@ -35,6 +35,8 @@ export default defineNavbarConfig([
   {
     text: "面试题",
     children:[
+      { text: "Java面试题", link: "/questions/Java面试题.md" },
+      { text: "数据存储中间件面试题", link: "/questions/数据存储中间件面试题.md" },
       { text: "框架中间件面试题", link: "/questions/框架中间件面试题.md" },
       { text: "分布式和微服务面试题", link: "/questions/分布式和微服务面试题.md" }
     ]
